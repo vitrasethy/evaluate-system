@@ -7,7 +7,7 @@ export default function home() {
       <section className=" bg-black h-[28vh] mt-20">
         <div className="text-center">
         <h1 className="text-4xl tracking-tight font-extrabold  sm:text-5xl md:text-6xl">Evaluation System</h1>
-        <p className="max-w-2xl mx-auto font-medium">
+        <p className="max-w-2xl mx-auto font-medium max-sm:mx-4">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis iste
           laudantium facere dicta enim nihil ad rerum nulla possimus natus.
         </p>
