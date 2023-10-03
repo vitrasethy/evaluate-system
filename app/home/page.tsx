@@ -1,7 +1,10 @@
+import Navbar from "../navbar/navbar";
+
 export default function home() {
   return (
     <main>
-      <section className=" bg-black h-[30vh] mt-20">
+        <Navbar/>
+      <section className=" bg-black h-[28vh] mt-20">
         <div className="text-center">
         <h1 className="text-4xl tracking-tight font-extrabold  sm:text-5xl md:text-6xl">Evaluation System</h1>
         <p className="max-w-2xl mx-auto font-medium">
