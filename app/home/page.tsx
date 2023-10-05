@@ -17,44 +17,23 @@ export default function home() {
       <section>
         <div className=" border-2 border-white rounded-2xl px-4 py-6 mx-6 mb-6">
             <div className="mb-4">
-            <p>text</p>
             <p>Engineering Days</p>
-            <p>Full-Time: 3:00 </p>
-            <p>Places</p>
+            <p>Start-Time: 3:00 </p>
             <p>During.....</p>
-            </div>
-            <div className="flex flex-wrap justify-evenly">
-                <button className="border-white border-2 px-4 py-1 rounded-3xl">Html</button>
-                <button className="border-white border-2 px-4 py-1 rounded-3xl">Css</button>
-                <button className="border-white border-2 px-4 py-1 rounded-3xl"> Javascript </button>
             </div>
         </div>
         <div className=" border-2 border-white rounded-2xl px-4 py-6 mx-6 mb-6">
         <div className="mb-4">
-            <p>text</p>
             <p>Engineering Days</p>
-            <p>Full-Time: 3:00 </p>
-            <p>Places</p>
+            <p>Start-Time: 3:00 </p>
             <p>During.....</p>
-            </div>
-            <div className="flex flex-wrap justify-evenly">
-                <button className="border-white border-2 px-4 py-1 rounded-3xl">Html</button>
-                <button className="border-white border-2 px-4 py-1 rounded-3xl">Css</button>
-                <button className="border-white border-2 px-4 py-1 rounded-3xl"> Javascript </button>
             </div>
         </div>
         <div className=" border-2 border-white rounded-2xl px-4 py-6 mx-6 mb-6">
         <div className="mb-4">
-            <p>text</p>
             <p>Engineering Days</p>
-            <p>Full-Time: 3:00 </p>
-            <p>Places</p>
+            <p>Start-Time: 3:00 </p>
             <p>During.....</p>
-            </div>
-            <div className="flex flex-wrap justify-evenly">
-                <button className="border-white border-2 px-4 py-1 rounded-3xl">Html</button>
-                <button className="border-white border-2 px-4 py-1 rounded-3xl">Css</button>
-                <button className="border-white border-2 px-4 py-1 rounded-3xl"> Javascript </button>
             </div>
         </div>
       </section>
