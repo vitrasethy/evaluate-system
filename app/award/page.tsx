@@ -1,10 +1,8 @@
-import Navbar from "../navbar/navbar";
 import Image from "next/image";
 import '../award/page.css'
 export default function award() {
   return (
     <main>
-      <Navbar />
       <section className=" h-auto mt-20">
         <div className="text-center">
           <h1 className="text-4xl tracking-tight font-extrabold  sm:text-5xl md:text-6xl">
