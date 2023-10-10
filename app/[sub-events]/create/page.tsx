@@ -6,9 +6,9 @@ export default function Create() {
     <div className="flex flex-col justify-center items-center mt-[15%] sm:mt-[5%] h-auto">
       <div className=" md:w-[500px] md:h-[600px] w-[370px] h-[540px] mx-[5%] bg-[#fff] drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] py-8 px-10 rounded-2xl">
         <form className="flex flex-col gap-6">
-        <h1 className="text-black text-center text-2xl md:text-4xl font-semibold">
-          Add Department
-        </h1>
+          <h1 className="text-black text-center text-2xl md:text-4xl font-semibold">
+            Add Department
+          </h1>
 
           <div>
             <label className="block md:text-lg text-base font-medium text-slate-700">
@@ -39,70 +39,73 @@ export default function Create() {
               />
             </div>
           </div>
-        
-        <div>
-            Year
-          <div className="mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-            <label className="w-full border-gray-200 border-b-0 border-r">
-              <div className="flex items-center pl-3">
-                <input
-                  type="radio"
-                  name="myRadio"
-                  value="option1"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
-                />
-                <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                  1
-                </p>
-              </div>
-            </label>
-            <label className="w-full border-gray-200 border-b-0 border-r">
-              <div className="flex items-center pl-3">
-                <input
-                  type="radio"
-                  name="myRadio"
-                  value="option1"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
-                />
-                <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                  2
-                </p>
-              </div>
-            </label>
-            <label className="w-full border-gray-200 border-b-0 border-r">
-              <div className="flex items-center pl-3">
-                <input
-                  type="radio"
-                  name="myRadio"
-                  value="option1"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
-                />
-                <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                  3
-                </p>
-              </div>
-            </label>
-            <label className="w-full border-gray-200 border-b-0 border-r">
-              <div className="flex items-center pl-3">
-                <input
-                  type="radio"
-                  name="myRadio"
-                  value="option1"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
-                />
-                <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                  4
-                </p>
-              </div>
-            </label>
-          </div>
-          </div>
-        
-        <div>
-            Select evaluator
-          <MultiSelect />
-        </div>
 
+          <div>
+            <p className="block md:text-lg text-base font-medium text-slate-700">
+              Year
+            </p>
+            <div className="mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+              <label className="w-full border-gray-200 border-b-0 border-r">
+                <div className="flex items-center pl-3">
+                  <input
+                    type="radio"
+                    name="myRadio"
+                    value="option1"
+                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
+                  />
+                  <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                    1
+                  </p>
+                </div>
+              </label>
+              <label className="w-full border-gray-200 border-b-0 border-r">
+                <div className="flex items-center pl-3">
+                  <input
+                    type="radio"
+                    name="myRadio"
+                    value="option1"
+                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
+                  />
+                  <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                    2
+                  </p>
+                </div>
+              </label>
+              <label className="w-full border-gray-200 border-b-0 border-r">
+                <div className="flex items-center pl-3">
+                  <input
+                    type="radio"
+                    name="myRadio"
+                    value="option1"
+                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
+                  />
+                  <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                    3
+                  </p>
+                </div>
+              </label>
+              <label className="w-full border-gray-200 border-b-0 border-r">
+                <div className="flex items-center pl-3">
+                  <input
+                    type="radio"
+                    name="myRadio"
+                    value="option1"
+                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
+                  />
+                  <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                    4
+                  </p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <p className="block md:text-lg text-base font-medium text-slate-700">
+              Select Evaluator
+            </p>
+            <MultiSelect />
+          </div>
 
           <div className="text-center">
             <button
