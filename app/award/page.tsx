@@ -1,7 +1,10 @@
 import Image from "next/image";
 import '../award/page.css'
+import { useEffect, useRef } from "react";
 export default function award() {
+  const textValue = useRef(null);
   return (
+  
     <main>
       <section className=" h-auto mt-20">
         <div className="text-center">
@@ -14,13 +17,13 @@ export default function award() {
 
       <section className="h-auto">
         <div className="flex flex-col justify-center items-center w-auto py-14">
-          <div className="relative w-auto">
+          {/* <div className="relative w-auto">
             <div className="mb-4 bg-gradient-to-r from-[#cc9910] to-[#fcf97c] shadow-2xl border-1 py-4 px-7 rounded-[2rem]">
               <div className="flex gap-6  text-xl">
                 <p>1st</p>
                 
                 <div id="scroll-container">
-                <div id="scroll-text"> Evaluation System</div>
+                <div id="scroll-text" className="w-[500px]">Lorem, ipsum dolor sit amet consectetur</div>
   </div>
 
                 <p>100 point</p>
@@ -34,7 +37,7 @@ export default function award() {
               height={35}
               className="absolute top-[-6px] left-[-10px] rotate-3"
             />
-          </div>
+          </div> */}
 
           <div className="relative w-auto">
             <div className="mb-4 bg-gradient-to-r from-[#cc9910] to-[#fcf97c] shadow-2xl border-1 py-4 px-7 rounded-[2rem]">
@@ -56,9 +59,9 @@ export default function award() {
 
           <div className="relative w-auto">
             <div className="mb-4 bg-gradient-to-r from-[#cc9910] to-[#fcf97c] shadow-2xl border-1 py-4 px-7 rounded-[2rem]">
-              <div className="flex gap-6  text-xl">
+              <div className="flex gap-6 text-xl w-auto">
                 <p>1st</p>
-                <p>Data analysis</p>
+                <p>A NEW MODEL FOR SIMULATING AND EVALUATING CONGESTION CAUSE AT SIGNALIZED INTERSECTION</p>
                 <p>100 point</p>
                 <p>003</p>
               </div>

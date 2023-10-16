@@ -12,10 +12,13 @@ export default function evaluate() {
           <div>
             <Image alt='' src="/bgcol.png" width={400} height={400}/>
           </div>
+          <div>
           <h2 className="my-4 text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white text-center">EVALUATION FORM</h2> 
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">JUDGING CRITERIA</h2>
+          </div>
           </div>
 
-          <div className='flex justify-around max-md:flex-wrap items-center bg-[#f7f9f9] border-2 py-4 md:px-6'>
+          {/* <div className='flex justify-around max-md:flex-wrap items-center bg-[#f7f9f9] border-2 py-4 md:px-6'>
             <div className='md:w-1/2'>
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">JUDGING CRITERIA</h2>
             </div>
@@ -28,17 +31,18 @@ export default function evaluate() {
             <p className='bg-[#014164] py-2 md:w-20'>Fair</p>
         </div>
         </div>
-          </div>
-          <div className='grid grid-cols-2 border-2 py-4 px-6 bg-[#4b5563] text-white rounded-md'>
+          </div> */}
+
+          <div className='grid grid-cols-2 border-2 py-4 px-6 bg-[#014164] text-white rounded-md'>
             <h4 className='text-lg font-bold'>Technical Quality</h4>
             <h4 className='text-lg font-bold text-center'>70%(Point)</h4>
           </div>
-          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2 '>
+          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2 border-gray-300 '>
           <div className='md:w-1/2'>
               <h2 className="text-gray-900 text-lg rounded-lg peer-checked:ring-blue-500 peer-checked:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">Introduction/ Background/ literature
                 (clear)</h2>
                 </div>
-              <ul className="flex items-center justify-center mt-4 md:mt-0 mb-4 md:mb-0">
+              <ul className="flex items-center gap-1 md:gap-2 justify-center mt-4 md:mt-0 mb-4 md:mb-0">
                 <li>
                   <input type="radio" id="number10" name="hosting" value="10" className="hidden peer" required />
                   <label htmlFor="number10" className=" p-2 sm:p-4 md:p-3 text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 hover:text-white hover:bg-[#014164] dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -84,11 +88,11 @@ export default function evaluate() {
               </ul>
 
           </div>
-          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2'>
+          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2 border-gray-300'>
             <div className='md:w-1/2'>
               <h2 className="text-gray-900 text-lg rounded-lg peer-checked:ring-blue-500 peer-checked:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">Objective clearly stated & concise</h2>
             </div>
-              <ul className="flex items-center justify-center mt-4 md:mt-0 mb-4 md:mb-0">
+              <ul className="flex items-center gap-1 md:gap-2 justify-center mt-4 md:mt-0 mb-4 md:mb-0">
                 <li>
                   <input type="radio" id="number20" name="hosting2" value="10" className="hidden peer" required />
                   <label htmlFor="number20" className="p-2 sm:p-4 md:p-3 text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 hover:text-white hover:bg-[#014164] dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -136,12 +140,12 @@ export default function evaluate() {
 
               </ul>
           </div>
-          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2'>
+          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2 border-gray-300'>
             <div className='md:w-1/2'>
               <h2 className="text-gray-900 text-lg rounded-lg peer-checked:ring-blue-500 peer-checked:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">Approach/method/study design/Materials
                 (new, clear & concise)</h2>
             </div>
-              <ul className="flex items-center justify-center mt-4 md:mt-0 mb-4 md:mb-0">
+              <ul className="flex items-center gap-1 md:gap-2 justify-center mt-4 md:mt-0 mb-4 md:mb-0">
                 <li>
                   <input type="radio" id="number30" name="hosting3" value="10" className="hidden peer" required />
                   <label htmlFor="number30" className="p-2 sm:p-4 md:p-3 text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 hover:text-white hover:bg-[#014164] dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -189,12 +193,12 @@ export default function evaluate() {
 
               </ul>
           </div>
-          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2'>
+          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2 border-gray-300'>
             <div className='md:w-1/2'>
               <h2 className="text-gray-900 text-lg rounded-lg peer-checked:ring-blue-500 peer-checked:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">Novel approach/method/study
                 design/Materials</h2>
             </div>
-              <ul className="flex items-center justify-center mt-4 md:mt-0 mb-4 md:mb-0">
+              <ul className="flex items-center gap-1 md:gap-2 justify-center mt-4 md:mt-0 mb-4 md:mb-0">
                 <li>
                   <input type="radio" id="40" name="hosting4" value="10" className="hidden peer" required />
                   <label htmlFor="40" className="p-2 sm:p-4 md:p-3 text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 hover:text-white hover:bg-[#014164] dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -243,11 +247,11 @@ export default function evaluate() {
               </ul>
 
           </div>
-          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2'>
+          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2 border-gray-300'>
             <div className='md:w-1/2'>
               <h2 className="text-gray-900 text-lg rounded-lg peer-checked:ring-blue-500 peer-checked:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">Analysis and Interpretation</h2>
             </div>
-              <ul className="flex items-center justify-center mt-4 md:mt-0 mb-4 md:mb-0">
+              <ul className="flex items-center gap-1 md:gap-2 justify-center mt-4 md:mt-0 mb-4 md:mb-0">
                 <li>
                   <input type="radio" id="number50" name="hosting5" value="10" className="hidden peer" required />
                   <label htmlFor="number50" className="p-2 sm:p-4 md:p-3 text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 hover:text-white hover:bg-[#014164] dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -295,13 +299,13 @@ export default function evaluate() {
 
               </ul>
           </div>
-          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2'>
+          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2 border-gray-300'>
             <div className='md:w-1/2'>
               <h2 className="text-gray-900 text-lg rounded-lg peer-checked:ring-blue-500 peer-checked:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">Demonstrate significance of topic in
                 Science/Engineering and draws conclusions
                 (clear, concise, & accurate)</h2>
             </div>
-              <ul className="flex items-center justify-center mt-4 md:mt-0 mb-4 md:mb-0">
+              <ul className="flex items-center gap-1 md:gap-2 justify-center mt-4 md:mt-0 mb-4 md:mb-0">
                 <li>
                   <input type="radio" id="number60" name="hosting6" value="10" className="hidden peer" required />
                   <label htmlFor="number60" className="p-2 sm:p-4 md:p-3 text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 hover:text-white hover:bg-[#014164] dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -346,16 +350,16 @@ export default function evaluate() {
                 </li>
               </ul>
           </div>
-          <div className='grid grid-cols-2 border-2 py-4 px-6 bg-[#4b5563] text-white rounded-md'>
+          <div className='grid grid-cols-2 border-2 py-4 px-6 bg-[#014164] text-white rounded-md'>
             <h4 className='text-lg font-bold'>Clarity of Presentation</h4>
             <h4 className='text-lg font-bold text-center'>30%(Point)</h4>
           </div>
-          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2'>
+          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2 border-gray-300'>
             <div className='md:w-1/2'>
               <h2 className="text-gray-900 text-lg rounded-lg peer-checked:ring-blue-500 peer-checked:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">Presentation and written materials are
                 clear, appropriate, and organized</h2>
             </div>
-              <ul className="flex items-center justify-center mt-4 md:mt-0 mb-4 md:mb-0">
+              <ul className="flex items-center gap-1 md:gap-2 justify-center mt-4 md:mt-0 mb-4 md:mb-0">
                 <li>
                   <input type="radio" id="number70" name="hosting7" value="10" className="hidden peer" required />
                   <label htmlFor="number70" className="p-2 sm:p-4 md:p-3 text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 hover:text-white hover:bg-[#014164] dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -404,13 +408,13 @@ export default function evaluate() {
               </ul>
 
           </div>
-          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2'>
+          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2 border-gray-300'>
             <div className='md:w-1/2'>
               <h2 className="text-gray-900 text-lg rounded-lg peer-checked:ring-blue-500 peer-checked:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">Presentation is creative and original, and
                 has visual impact (effective use of figure,
                 table, diagram, video, animation)</h2>
             </div>
-              <ul className="flex items-center justify-center mt-4 md:mt-0 mb-4 md:mb-0">
+              <ul className="flex items-center gap-1 md:gap-2 justify-center mt-4 md:mt-0 mb-4 md:mb-0">
                 <li>
                   <input type="radio" id="number80" name="hosting8" value="10" className="hidden peer" required />
                   <label htmlFor="number80" className="p-2 sm:p-4 md:p-3 text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 hover:text-white hover:bg-[#014164] dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -458,13 +462,13 @@ export default function evaluate() {
 
               </ul>
           </div>
-          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2'>
+          <div className='md:flex md:justify-around my-10 p-4 sm:px-6 rounded-lg bg-[#f7f9f9] border-2 border-gray-300'>
             <div className='md:w-1/2'>
               <h2 className="text-gray-900 text-lg rounded-lg peer-checked:ring-blue-500 peer-checked:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">Answer/explanation to audience questions
                 (short & clear) (* skip it htmlFor poster
                 evaluation)</h2>
             </div>
-              <ul className="flex items-center justify-center mt-4 md:mt-0 mb-4 md:mb-0">
+              <ul className="flex items-center gap-1 md:gap-2 justify-center mt-4 md:mt-0 mb-4 md:mb-0">
                 <li>
                   <input type="radio" id="number90" name="hosting9" value="10" className="hidden peer" required />
                   <label htmlFor="number90" className="p-2 sm:p-4 md:p-3 text-gray-900 bg-white peer-checked:bg-[#014164] peer-checked:text-white border border-gray-500 rounded-full cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 hover:text-white hover:bg-[#014164] dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -509,16 +513,16 @@ export default function evaluate() {
                 </li>
               </ul>
           </div>
-          <div className='grid grid-cols-2 items-center py-4 px-6 rounded-lg bg-[#4b5563] text-white'>
+          <div className='grid grid-cols-2 items-center py-4 px-6 rounded-lg bg-[#014164] text-white'>
             <p className='text-center text-lg sm:text-xl font-semibold'>TOTAL SCORE : </p>
             <p> </p>
           </div>
 
-          <label className='flex justify-around items-center border-2 p-4 bg-[#f7f9f9] '>
-      <div className='md:w-1/2 text-center'>
+          <label className='flex justify-around items-center border-2 p-4 bg-[#f7f9f9] border-gray-300 rounded-lg '>
+      <div className='md:w-1/2 text-center md:text-lg'>
         <p>COMMENTS:</p>
       </div>
-      <textarea name="comment" rows={5} cols={60} className='border-2 ' />
+      <textarea name="comment" rows={4} cols={60} className='border-2 border-gray-400 p-4' placeholder='write your comments...' />
     </label>
 
         </form>
