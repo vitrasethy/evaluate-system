@@ -531,6 +531,12 @@ export default function evaluate() {
             <p className='text-center text-lg sm:text-xl font-semibold'>TOTAL SCORE : </p>
             <p> </p>
           </div>
+
+          <label className='flex justify-evenly items-center border-2 p-4 bg-[#014164] '>
+      <p>COMMENTS:</p>
+      <textarea name="comment" rows={5} cols={60} className='border-2 ' />
+    </label>
+
         </form>
       </div>
     </div>
