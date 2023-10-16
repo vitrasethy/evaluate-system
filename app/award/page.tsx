@@ -1,8 +1,8 @@
 import Image from "next/image";
 import '../award/page.css'
-import { useEffect, useRef } from "react";
+
 export default function award() {
-  const textValue = useRef(null);
+
   return (
   
     <main>
