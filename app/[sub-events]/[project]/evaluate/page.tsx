@@ -14,11 +14,10 @@ export default function evaluate() {
           </div>
           <div>
           <h2 className="my-4 text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white text-center">EVALUATION FORM</h2> 
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">JUDGING CRITERIA</h2>
           </div>
           </div>
 
-          {/* <div className='flex justify-around max-md:flex-wrap items-center bg-[#f7f9f9] border-2 py-4 md:px-6'>
+          <div className='flex justify-around max-md:flex-wrap items-center bg-[#f7f9f9] border-2 py-4 md:px-6'>
             <div className='md:w-1/2'>
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">JUDGING CRITERIA</h2>
             </div>
@@ -31,7 +30,7 @@ export default function evaluate() {
             <p className='bg-[#014164] py-2 md:w-20'>Fair</p>
         </div>
         </div>
-          </div> */}
+          </div>
 
           <div className='grid grid-cols-2 border-2 py-4 px-6 bg-[#014164] text-white rounded-md'>
             <h4 className='text-lg font-bold'>Technical Quality</h4>
