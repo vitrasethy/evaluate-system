@@ -1,31 +1,14 @@
 "use client"
-import { useEffect, useState } from 'react';
+import React from 'react';
 import Drop from './dropdown'
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Navbar() {
-  const [scrolling, setScrolling] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+ 
   return (
-    <div className="sticky top-0 bg-[#014164]">
-      <div className={`bg-[#014164] transition-all ${scrolling ? '-translate-y-full' : 'translate-y-0'
-        }  shadow-md z-50`}>
+    <div className="sticky top-0 bg-[#014164] z-50">
+      <div>
 
         <div className="Desktop text-white h-20 justify-between items-center hidden md:flex mr-5 ml-5">
           <div>
