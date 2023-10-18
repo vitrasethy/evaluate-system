@@ -39,7 +39,7 @@ export default function award() {
               <div className="flex gap-8 text-3xl">
                 <p>1st</p>
                   <span className="moving-text-button">
-                <TextWithAnimation text={'A NEW MODEL FOR SIMULATING AND EVALUATING CONGESTION CAUSE AT SIGNALIZED INTERSECTION '}/>
+                <TextWithAnimation text={'A NEW MODEL FOR SIMULATING AND EVALUATING'}/>
                   </span>
                 <p>100 point</p>
                 <p>003</p>
@@ -79,7 +79,7 @@ export default function award() {
               <div className="flex gap-8 text-3xl">
                 <p>3rd</p>
                   <span className="moving-text-button">
-                <TextWithAnimation text={'A NEW MODEL FOR SIMULATING AND EVALUATING CONGESTION CAUSE AT SIGNALIZED INTERSECTION '}/>
+                <TextWithAnimation text={'A NEW MODEL FOR SIMULATING'}/>
                   </span>
                 <p>100 point</p>
                 <p>003</p>

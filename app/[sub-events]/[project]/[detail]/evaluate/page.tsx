@@ -8,7 +8,7 @@ export default function evaluate() {
       <div className="w-screen xl:w-[70%] p-6 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-16">
         <form className="space-y-6" action="#">
 
-          <div className='flex flex-wrap justify-around items-center'>
+          <div className='flex flex-wrap justify-around items-center '>
           <div>
             <Image alt='' src="/bgcol.png" width={400} height={400}/>
           </div>

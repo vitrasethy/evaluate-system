@@ -10,7 +10,7 @@ function TextWithAnimation({ text }: { text:any}) {
   // Use an effect hook to update the animation class based on the text length
   useEffect(() => {
     // Check the length of the text
-    if (text.length > 30) {
+    if (text.length > 50) {
       // Set the animation class to scroll-rtl
       setAnimationClass("scroll-rtl");
     } else {
