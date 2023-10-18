@@ -44,7 +44,7 @@ export default function Create() {
             <p className="block md:text-lg text-base font-medium text-slate-700">
               Year
             </p>
-            <div className="mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <div className="mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg flex">
               <label className="w-full border-gray-200 border-b-0 border-r">
                 <div className="flex items-center pl-3">
                   <input
@@ -53,7 +53,7 @@ export default function Create() {
                     value="option1"
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                   />
-                  <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900">
                     1
                   </p>
                 </div>
@@ -66,7 +66,7 @@ export default function Create() {
                     value="option1"
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                   />
-                  <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900">
                     2
                   </p>
                 </div>
@@ -79,7 +79,7 @@ export default function Create() {
                     value="option1"
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                   />
-                  <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900">
                     3
                   </p>
                 </div>
@@ -92,7 +92,7 @@ export default function Create() {
                     value="option1"
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                   />
-                  <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  <p className="w-full py-3 ml-2 text-sm font-medium text-gray-900">
                     4
                   </p>
                 </div>

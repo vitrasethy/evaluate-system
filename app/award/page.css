@@ -1,39 +1,26 @@
-#scroll-container {
-    overflow: hidden;
-  }
-  
-  #scroll-text {
-    /* animation properties */
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
+.moving-text-button {
+  overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+  font-size: 1.875rem;
+  color: rgb(49, 48, 48);
+  border: none;
+  cursor: pointer;
+  width: 55rem;
+  text-align: center;
+}
+
+/* Define the animation class */
+.scroll-rtl {
+  animation: scroll-rtl 30s linear infinite;
+}
+
+/* Define the keyframes for the animation */
+@keyframes scroll-rtl {
+  from {
     transform: translateX(100%);
-    
-    -moz-animation: my-animation 10s linear infinite;
-    -webkit-animation: my-animation 10s linear infinite;
-    animation: my-animation 10s linear infinite;
   }
-  
-  /* for Firefox */
-  @-moz-keyframes my-animation {
-    from { -moz-transform: translateX(100%); }
-    to { -moz-transform: translateX(-100%); }
+  to {
+    transform: translateX(-90%);
   }
-  
-  /* for Chrome */
-  @-webkit-keyframes my-animation {
-    from { -webkit-transform: translateX(100%); }
-    to { -webkit-transform: translateX(-100%); }
-  }
-  
-  @keyframes my-animation {
-    from {
-      -moz-transform: translateX(100%);
-      -webkit-transform: translateX(100%);
-      transform: translateX(100%);
-    }
-    to {
-      -moz-transform: translateX(-100%);
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-    }
-  }  
+}
