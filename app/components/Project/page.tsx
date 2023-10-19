@@ -163,11 +163,9 @@ export const columns: ColumnDef<Payment>[] = [
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="center"
-                className="bg-gray-50 text-black"
-              >
-                <DropdownMenuSeparator />
+                className="bg-gray-50 text-black">
+              
                 <DropdownMenuLabel>Member</DropdownMenuLabel>
-                <DropdownMenuItem></DropdownMenuItem>
                 <DropdownMenuItem>Meng Srun</DropdownMenuItem>
                 <DropdownMenuItem>Mey Sorng</DropdownMenuItem>
                 <DropdownMenuItem>Rithy</DropdownMenuItem>
@@ -276,9 +274,9 @@ export default function TabsDemo() {
             Poster
           </TabsTrigger>
         </TabsList>
-        <div className="present">
+        <div className="present ">
           <TabsContent value="account">
-            <Card className=" w-full">
+          <Card className=" w-full">
               <CardContent className="mt-5">
                 <div className="flex justify-center">
                   <div className="w-full">
@@ -305,7 +303,7 @@ export default function TabsDemo() {
                         </DropdownMenuContent>
                       </DropdownMenu>
                     </div>
-                    <div className="md:mt-[-20px] mt-[-47px]">
+                    <div className="md:mt-[-20px] mt-[-35px]">
                       <Table className="border-0 ">
                         <TableHeader className="md:bg-gray-300">
                           {table.getHeaderGroups().map((headerGroup) => (
@@ -367,92 +365,92 @@ export default function TabsDemo() {
           </TabsContent>
         </div>
         <TabsContent value="password">
-          <Card className="rounded-b-xl">
-            <CardContent className="">
-              <div className="flex justify-center">
-                <div className="w-full">
-                  <div className="flex items-center md:mb-5">
-                    <DropdownMenu>
-                      <DropdownMenuContent align="end">
-                        {table
-                          .getAllColumns()
-                          .filter((column) => column.getCanHide())
-                          .map((column) => {
-                            return (
-                              <DropdownMenuCheckboxItem
-                                key={column.id}
-                                className="capitalize"
-                                checked={column.getIsVisible()}
-                                onCheckedChange={(value) =>
-                                  column.toggleVisibility(!!value)
-                                }
-                              >
-                                {column.id}
-                              </DropdownMenuCheckboxItem>
-                            );
-                          })}
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </div>
-                  <div className=" ">
-                    <Table className="border-0">
-                      <TableHeader className="md:bg-gray-300">
-                        {table.getHeaderGroups().map((headerGroup) => (
-                          <TableRow className="" key={headerGroup.id}>
-                            {headerGroup.headers.map((header) => {
+        <Card className=" w-full">
+              <CardContent className="mt-5">
+                <div className="flex justify-center">
+                  <div className="w-full">
+                    <div className="flex items-center md:mb-5">
+                      <DropdownMenu>
+                        <DropdownMenuContent align="end">
+                          {table
+                            .getAllColumns()
+                            .filter((column) => column.getCanHide())
+                            .map((column) => {
                               return (
-                                <TableHead key={header.id}>
-                                  {header.isPlaceholder
-                                    ? null
-                                    : flexRender(
-                                        header.column.columnDef.header,
-                                        header.getContext()
-                                      )}
-                                </TableHead>
+                                <DropdownMenuCheckboxItem
+                                  key={column.id}
+                                  className="capitalize"
+                                  checked={column.getIsVisible()}
+                                  onCheckedChange={(value) =>
+                                    column.toggleVisibility(!!value)
+                                  }
+                                >
+                                  {column.id}
+                                </DropdownMenuCheckboxItem>
                               );
                             })}
-                          </TableRow>
-                        ))}
-                      </TableHeader>
-                      <TableBody>
-                        {table.getRowModel().rows?.length ? (
-                          table.getRowModel().rows.map((row) => (
-                            <TableRow
-                              key={row.id}
-                              data-state={row.getIsSelected() && "selected"}
-                              className={`overflow-hidden ${
-                                row.getValue("complete")
-                                  ? "bg-green-100"
-                                  : "bg-red-100"
-                              }`}
-                            >
-                              {row.getVisibleCells().map((cell) => (
-                                <TableCell key={cell.id}>
-                                  {flexRender(
-                                    cell.column.columnDef.cell,
-                                    cell.getContext()
-                                  )}
-                                </TableCell>
-                              ))}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </div>
+                    <div className="md:mt-[-20px] mt-[-35px]">
+                      <Table className="border-0 ">
+                        <TableHeader className="md:bg-gray-300">
+                          {table.getHeaderGroups().map((headerGroup) => (
+                            <TableRow className="" key={headerGroup.id}>
+                              {headerGroup.headers.map((header) => {
+                                return (
+                                  <TableHead key={header.id}>
+                                    {header.isPlaceholder
+                                      ? null
+                                      : flexRender(
+                                          header.column.columnDef.header,
+                                          header.getContext()
+                                        )}
+                                  </TableHead>
+                                );
+                              })}
                             </TableRow>
-                          ))
-                        ) : (
-                          <TableRow>
-                            <TableCell
-                              colSpan={columns.length}
-                              className="h-24 text-center"
-                            >
-                              No results.
-                            </TableCell>
-                          </TableRow>
-                        )}
-                      </TableBody>
-                    </Table>
+                          ))}
+                        </TableHeader>
+                        <TableBody className="test hover:">
+                          {table.getRowModel().rows?.length ? (
+                            table.getRowModel().rows.map((row) => (
+                              <TableRow
+                                key={row.id}
+                                data-state={row.getIsSelected() && "selected"}
+                                className={`overflow-hidden ${
+                                  row.getValue("complete")
+                                    ? "bg-green-100"
+                                    : "bg-red-100"
+                                }`}
+                              >
+                                {row.getVisibleCells().map((cell) => (
+                                  <TableCell key={cell.id}>
+                                    {flexRender(
+                                      cell.column.columnDef.cell,
+                                      cell.getContext()
+                                    )}
+                                  </TableCell>
+                                ))}
+                              </TableRow>
+                            ))
+                          ) : (
+                            <TableRow>
+                              <TableCell
+                                colSpan={columns.length}
+                                className="h-24 text-center"
+                              >
+                                No results.
+                              </TableCell>
+                            </TableRow>
+                          )}
+                        </TableBody>
+                      </Table>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
         </TabsContent>
       </Tabs>
     </div>
