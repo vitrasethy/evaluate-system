@@ -273,10 +273,10 @@ export default function TabsDemo() {
   return (
     <div className="flex justify-center bg-gray-200 w-full items-center h-screen">
 
-      <Tabs defaultValue="account" className="md:w-[70%] w-[90%] shadow-2xl mx-20  rounded-xl bg-white">
-        <TabsList className="flex grid-cols-2 mb-5 rounded-xl border-none h-10 justify-center my-4  text-white">
-          <TabsTrigger value="account" className="   h-14 w-1/2 ml-5 rounded-xl  text-black border-blue-100 border-2 text-md shadow-xl">Presentation</TabsTrigger>
-          <TabsTrigger value="password" className=" h-14 w-1/2 mr-5 rounded-xl  text-black border-blue-100 border-2 text-md shadow-xl">Poster</TabsTrigger>
+      <Tabs defaultValue="account" className="md:w-[70%] w-[90%] shadow-2xl mx-20  rounded-xl bg-white ">
+        <TabsList className="flex grid-cols-2 mb-5 rounded-xl border-none h-10 justify-center my-4 bg-white ">
+          <TabsTrigger value="account" className="   h-14 w-1/2 ml-5 rounded-xl border-blue-100 border-2 text-md shadow-xl">Presentation</TabsTrigger>
+          <TabsTrigger value="password" className=" h-14 w-1/2 mr-5 rounded-xl border-blue-100 border-2 text-md shadow-xl">Poster</TabsTrigger>
         </TabsList>
         <div className="present">
 
