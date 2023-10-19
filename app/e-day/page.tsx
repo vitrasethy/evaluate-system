@@ -1,9 +1,9 @@
-import DataTableDemo from "../../components/deparments-form";
+import DepartmentsForm from "@/components/deparments-form";
 
 export default function page() {
   return (
     <div>
-      <DataTableDemo/>
+      <DepartmentsForm/>
     </div>
   )
 }

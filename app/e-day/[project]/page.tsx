@@ -1,9 +1,9 @@
-import TabsDemo from '@/components/projects-form'
+import ProjectsForm from "@/components/projects-form";
 
 export default function page() {
   return (
     <div>
-        <TabsDemo/>
+        <ProjectsForm/>
     </div>
   )
 }
