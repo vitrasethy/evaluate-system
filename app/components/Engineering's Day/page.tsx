@@ -168,14 +168,14 @@ export default function DataTableDemo() {
       <h1 className="xl:text-6xl text-3xl text-center font-extrabold pt-5">Engineering's Day</h1>
       <div className="flex justify-center items-center">
 
-        <Button className="text-center bg-blue-700 px-5 py-6 mt-10 hover:right-4 hover:bg-blue-700 text-white rounded-xl" >
+        <button className="text-center bg-blue-700 px-5 py-6 mt-10 hover:right-4 hover:bg-blue-700 text-white rounded-xl" >
       <a href="./Project">Add new</a>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 ml-2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
           </svg>
 
-        </Button>
-      </div>
+        </button>
+      </div> 
       <div className="flex justify-center">
 
         <div className="w-[90%] lg:w-[60%] h-[47%] py-5 px-5 border-2 mt-10  bg-white rounded-xl shadow-2xl">
