@@ -226,7 +226,7 @@ export const columns: ColumnDef<Payment>[] = [
     },
   },
 ];
-export default function TabsDemo() {
+export default function ProjectsForm() {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -255,7 +255,7 @@ export default function TabsDemo() {
   });
 
   return (
-    <div className="flex justify-center bg-gray-200 w-full items-center h-screen">
+    <div className="flex justify-center w-full items-center">
       <Tabs
         defaultValue="account"
         className="md:w-[70%] w-[90%] shadow-2xl mx-20  rounded-xl bg-white"

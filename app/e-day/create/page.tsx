@@ -1,4 +1,4 @@
-import MultiSelect from "@/app/components/MultiSelect";
+import MultiSelect from "@/components/MultiSelect";
 import React from "react";
 
 export default function Create() {

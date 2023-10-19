@@ -1,5 +1,4 @@
-import TabsDemo from '@/app/components/Project/page'
-import React from 'react'
+import TabsDemo from '@/components/projects-form'
 
 export default function page() {
   return (

@@ -1,4 +1,4 @@
-import DataTableDemo from "../components/Engineering's Day/page";
+import DataTableDemo from "../../components/deparments-form";
 
 export default function page() {
   return (
