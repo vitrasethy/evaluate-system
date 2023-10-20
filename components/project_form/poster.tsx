@@ -43,7 +43,7 @@ const data: Poster[] = [
     year: 1,
     department: "Intelligent Intrusion Detection System",
     leader: "MeySorng",
-    judge: "People",
+    judge: "4",
     generation: "8",
     no: 1,
     score: 60,
@@ -55,7 +55,7 @@ const data: Poster[] = [
     year: 3,
     department: "Blockchain-based Identity Management",
     leader: "Rithy",
-    judge: "People",
+    judge: "4",
     generation: "7",
     no: 3,
     score: 50,
@@ -66,7 +66,7 @@ const data: Poster[] = [
     year: 4,
     department: "Personalized Fitness Tracker",
     leader: "Bong Chhay",
-    judge: "People",
+    judge: "4",
     generation: "5",
     no: 4,
     score: 98,
@@ -97,7 +97,7 @@ export const columns: ColumnDef<Poster>[] = [
     ),
     cell: ({ row }) => {
       const no = parseFloat(row.getValue("no"));
-      return <div className="text-center font-medium">{no}</div>;
+      return <div className="text-center font-medium text-base ">{no}</div>;
     },
   },
 
@@ -109,7 +109,7 @@ export const columns: ColumnDef<Poster>[] = [
       </div>
     ),
     cell: ({ row }) => {
-      return <div className="capitalize text-start">{row.getValue("id")}</div>;
+      return <div className="capitalize text-start text-base">{row.getValue("id")}</div>;
     },
   },
 
@@ -121,7 +121,7 @@ export const columns: ColumnDef<Poster>[] = [
       </div>
     ),
     cell: ({ row }) => (
-      <div className="capitalize text-start">{row.getValue("department")}</div>
+      <div className="capitalize text-start text-base font-medium">{row.getValue("department")}</div>
     ),
   },
   {
@@ -133,7 +133,7 @@ export const columns: ColumnDef<Poster>[] = [
     ),
     cell: ({ row }) => {
       return (
-        <div className="capitalize text-start">{row.getValue("leader")}</div>
+        <div className="capitalize text-start text-base">{row.getValue("leader")}</div>
       );
     },
   },
@@ -141,17 +141,17 @@ export const columns: ColumnDef<Poster>[] = [
     accessorKey: "judge",
 
     header: () => (
-      <div className="text-start hidden md:block w-full font-bold text-black text-lg">
+      <div className="text-start hidden md:block w-full font-bold  text-black text-lg">
         Judge
       </div>
     ),
     cell: ({ row }) => {
       return (
         <div className="capitalize text-start flex justify-center ">
-          <div className="text-start font-medium">
+          <div className="text-start ">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="h-8 w-8 p-0">
+                <Button variant="ghost" className="h-8 w-8 p-0 text-base">
                   {row.getValue("judge")}
                 </Button>
               </DropdownMenuTrigger>
@@ -187,7 +187,7 @@ export const columns: ColumnDef<Poster>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="lowercase text-center">{row.getValue("score")}</div>
+      <div className="lowercase text-center text-base">{row.getValue("score")}</div>
     ),
   },
   {
@@ -210,9 +210,9 @@ export const columns: ColumnDef<Poster>[] = [
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-gray-50 text-black">
               <DropdownMenuLabel>Action</DropdownMenuLabel>
-              <DropdownMenuSeparator />
               <DropdownMenuItem>Edit</DropdownMenuItem>
               <DropdownMenuItem>Delete</DropdownMenuItem>
+              <DropdownMenuItem>Evaluate</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -281,7 +281,7 @@ export default function ProjectsForm() {
                 </div>
                 <div className="md:mt-[-20px] mt-[-35px]">
                   <Table className="border-0 ">
-                    <TableHeader className="md:bg-gray-300">
+                    <TableHeader className="md:bg-gray-100">
                       {table.getHeaderGroups().map((headerGroup) => (
                         <TableRow className="" key={headerGroup.id}>
                           {headerGroup.headers.map((header) => {
@@ -308,7 +308,7 @@ export default function ProjectsForm() {
                             className={`overflow-hidden ${
                               row.getValue("complete")
                                 ? "bg-green-100"
-                                : "bg-red-100"
+                                : ""
                             }`}
                           >
                             {row.getVisibleCells().map((cell) => (
