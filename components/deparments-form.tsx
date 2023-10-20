@@ -170,8 +170,8 @@ export default function DepartmentsForm() {
   return (
     <div className="deparment_form">
       <div className="flex justify-center">
-        <div className="w-[90%] lg:w-[60%] h-[47%] py-5 px-5 border-1 mt-10 cursor-pointer bg-white rounded-xl shadow-2xl border-2 border-gray-100">
-          <div className="flex items-center md:mb-5">
+        <div className="w-[90%] lg:w-[60%] h-[47%] py-5 px-5 border-1 mt-10 cursor-pointer bg-white rounded-xl shadow-2xl border-2 border-gray-300">
+          <div className="flex items-center md:mb-5 ">
             <Input
               placeholder="Filter department..."
               value={
@@ -183,7 +183,7 @@ export default function DepartmentsForm() {
                   .getColumn("department")
                   ?.setFilterValue(event.target.value)
               }
-              className="max-w-sm"
+              className="max-w-sm border-2 "
             />
             <DropdownMenu>
               <DropdownMenuContent align="end">
