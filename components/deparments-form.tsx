@@ -130,7 +130,6 @@ export const columns: ColumnDef<Payment>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="bg-gray-50 text-black">
             <DropdownMenuLabel>Action</DropdownMenuLabel>
-            <DropdownMenuSeparator />
             <DropdownMenuItem>Edit</DropdownMenuItem>
             <DropdownMenuItem>Delete</DropdownMenuItem>
           </DropdownMenuContent>
@@ -169,9 +168,9 @@ export default function DepartmentsForm() {
   });
 
   return (
-    <div className="">
+    <div className="deparment_form">
       <div className="flex justify-center">
-        <div className="w-[90%] lg:w-[60%] h-[47%] py-5 px-5 border-1 mt-10 cursor-pointer bg-white rounded-xl shadow-2xl">
+        <div className="w-[90%] lg:w-[60%] h-[47%] py-5 px-5 border-1 mt-10 cursor-pointer bg-white rounded-xl shadow-2xl border-2 border-gray-100">
           <div className="flex items-center md:mb-5">
             <Input
               placeholder="Filter department..."

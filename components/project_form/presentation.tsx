@@ -3,7 +3,6 @@
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -38,72 +37,72 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const data: Payment[] = [
+const data: Present[] = [
   {
-    id: "m5gr84i9",
+    id: "IG8-4",
     year: 1,
-    department: "Automation Engineering",
+    department: "Smart Attendance Tracker",
     leader: "MeySorng",
-    judge: "AAA",
+    judge: "People",
     generation: "8",
     no: 1,
     score: 60,
     complete: true,
   },
   {
-    id: "3u1reuv4",
+    id: "IG8-3",
     year: 2,
-    department: "Bio Engineering",
+    department: "Efficient Inventory Management System",
     leader: "BongVitra",
-    judge: "BBB",
+    judge: "People",
     generation: "6",
     no: 2,
     score: 100,
     complete: false,
   },
   {
-    id: "derv1ws0",
+    id: "IG8-2",
     year: 3,
-    department: "Environmental Engineering",
+    department: "AR-powered Tourist Guide",
     leader: "Rithy",
-    judge: "CCC",
+    judge: "People",
     generation: "7",
     no: 3,
     score: 50,
     complete: true,
   },
   {
-    id: "5kma53ae",
+    id: "IG7-1",
     year: 4,
-    department: "Information Technology Engineering",
+    department: "Interactive Language Learning Platform",
     leader: "Bong Chhay",
-    judge: "DDD",
+    judge: "People",
     generation: "5",
     no: 4,
     score: 98,
     complete: false,
   },
   {
-    id: "bhqecj4p",
+    id: "IG7-3",
     year: 5,
-    department: "Telecommunication & Electric Engineering",
+    department: "Predictive Healthcare Analytics",
     leader: "Veha",
-    judge: "EEE",
+    judge: "People",
     generation: "8",
     no: 5,
     score: 74,
     complete: true,
   },
 ];
-export type Payment = {
+export type Present = {
   id: string;
   year: number;
   department:
-    | "Automation Engineering"
-    | "Bio Engineering"
-    | "Environmental Engineering"
-    | "Information Technology Engineering"
-    | "Telecommunication & Electric Engineering";
+    | "Smart Attendance Tracker"
+    | "Efficient Inventory Management System"
+    | "AR-powered Tourist Guide"
+    | "Interactive Language Learning Platform"
+    | "Predictive Healthcare Analytics";
   leader: string;
   judge: string;
   generation: string;
@@ -111,10 +110,10 @@ export type Payment = {
   score: number;
   complete: boolean;
 };
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "no",
-    header: () => <div className="text-center hidden md:block">No</div>,
+    header: () => <div className="text-center hidden md:block w-full font-bold text-black text-lg">No</div>,
     cell: ({ row }) => {
       const no = parseFloat(row.getValue("no"));
       return <div className="text-center font-medium">{no}</div>;
@@ -123,38 +122,38 @@ export const columns: ColumnDef<Payment>[] = [
 
   {
     accessorKey: "id",
-    header: () => <div className="text-center hidden md:block">ID</div>,
+    header: () => <div className="text-start hidden md:block w-full font-bold text-black text-lg">ID</div>,
     cell: ({ row }) => {
-      return <div className="capitalize text-center">{row.getValue("id")}</div>;
+      return <div className="capitalize text-start">{row.getValue("id")}</div>;
     },
   },
 
   {
     accessorKey: "department",
     header: () => (
-      <div className="text-center hidden md:block w-full">Project Name</div>
+      <div className="text-start hidden md:block w-full font-bold text-black text-lg">Project Name</div>
     ),
     cell: ({ row }) => (
-      <div className="capitalize text-center">{row.getValue("department")}</div>
+      <div className="capitalize text-start">{row.getValue("department")}</div>
     ),
   },
   {
     accessorKey: "leader",
-    header: () => <div className="text-center hidden md:block">Leader</div>,
+    header: () => <div className="text-start hidden md:block w-full font-bold text-black text-lg">Leader</div>,
     cell: ({ row }) => {
       return (
-        <div className="capitalize text-center">{row.getValue("leader")}</div>
+        <div className="capitalize text-start">{row.getValue("leader")}</div>
       );
     },
   },
   {
     accessorKey: "judge",
 
-    header: () => <div className="text-center hidden md:block">Judge</div>,
+    header: () => <div className="text-start hidden md:block w-full font-bold text-black text-lg">Judge</div>,
     cell: ({ row }) => {
       return (
-        <div className="capitalize text-center flex justify-center">
-          <div className="text-center font-medium">
+        <div className="capitalize text-start flex justify-center">
+          <div className="text-start font-medium">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="h-8 w-8 p-0">
@@ -183,7 +182,7 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => {
       return (
         <Button
-          className=" hidden md:flex text-center ml-7"
+          className=" text-start hidden md:flex w-full font-bold text-black text-lg"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -203,10 +202,10 @@ export const columns: ColumnDef<Payment>[] = [
   },
   {
     accessorKey: "year",
-    header: () => <div className="text-center hidden md:block"></div>,
+    header: () => <div className="text-start hidden md:block"></div>,
     cell: ({ row }) => {
       return (
-        <div className="text-center font-medium">
+        <div className="text-start font-medium">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="h-8 w-8 p-0">
@@ -226,6 +225,8 @@ export const columns: ColumnDef<Payment>[] = [
     },
   },
 ];
+
+
 export default function ProjectsForm() {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -254,28 +255,11 @@ export default function ProjectsForm() {
     },
   });
 
+
   return (
-    <div className="flex justify-center w-full items-center">
-      <Tabs
-        defaultValue="account"
-        className="md:w-[70%] w-[90%] shadow-2xl mx-20  rounded-xl bg-white"
-      >
-        <TabsList className="flex grid-cols-2 mb-5 rounded-xl border-none h-10 justify-center my-4 bg-white">
-          <TabsTrigger
-            value="account"
-            className="h-14 w-1/2 ml-5 rounded-xl border-blue-100 border-2 text-md shadow-xl"
-          >
-            Presentation
-          </TabsTrigger>
-          <TabsTrigger
-            value="password"
-            className="h-14 w-1/2 mr-5 rounded-xl border-blue-100 border-2 text-md shadow-xl"
-          >
-            Poster
-          </TabsTrigger>
-        </TabsList>
+    <div className="flex justify-center w-full items-center">  
         <div className="present ">
-          <TabsContent value="account">
+         
           <Card className=" w-full">
               <CardContent className="mt-5">
                 <div className="flex justify-center">
@@ -362,97 +346,10 @@ export default function ProjectsForm() {
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
+          
         </div>
-        <TabsContent value="password">
-        <Card className=" w-full">
-              <CardContent className="mt-5">
-                <div className="flex justify-center">
-                  <div className="w-full">
-                    <div className="flex items-center md:mb-5">
-                      <DropdownMenu>
-                        <DropdownMenuContent align="end">
-                          {table
-                            .getAllColumns()
-                            .filter((column) => column.getCanHide())
-                            .map((column) => {
-                              return (
-                                <DropdownMenuCheckboxItem
-                                  key={column.id}
-                                  className="capitalize"
-                                  checked={column.getIsVisible()}
-                                  onCheckedChange={(value) =>
-                                    column.toggleVisibility(!!value)
-                                  }
-                                >
-                                  {column.id}
-                                </DropdownMenuCheckboxItem>
-                              );
-                            })}
-                        </DropdownMenuContent>
-                      </DropdownMenu>
-                    </div>
-                    <div className="md:mt-[-20px] mt-[-35px]">
-                      <Table className="border-0 ">
-                        <TableHeader className="md:bg-gray-300">
-                          {table.getHeaderGroups().map((headerGroup) => (
-                            <TableRow className="" key={headerGroup.id}>
-                              {headerGroup.headers.map((header) => {
-                                return (
-                                  <TableHead key={header.id}>
-                                    {header.isPlaceholder
-                                      ? null
-                                      : flexRender(
-                                          header.column.columnDef.header,
-                                          header.getContext()
-                                        )}
-                                  </TableHead>
-                                );
-                              })}
-                            </TableRow>
-                          ))}
-                        </TableHeader>
-                        <TableBody className="test hover:">
-                          {table.getRowModel().rows?.length ? (
-                            table.getRowModel().rows.map((row) => (
-                              <TableRow
-                                key={row.id}
-                                data-state={row.getIsSelected() && "selected"}
-                                className={`overflow-hidden ${
-                                  row.getValue("complete")
-                                    ? "bg-green-100"
-                                    : "bg-red-100"
-                                }`}
-                              >
-                                {row.getVisibleCells().map((cell) => (
-                                  <TableCell key={cell.id}>
-                                    {flexRender(
-                                      cell.column.columnDef.cell,
-                                      cell.getContext()
-                                    )}
-                                  </TableCell>
-                                ))}
-                              </TableRow>
-                            ))
-                          ) : (
-                            <TableRow>
-                              <TableCell
-                                colSpan={columns.length}
-                                className="h-24 text-center"
-                              >
-                                No results.
-                              </TableCell>
-                            </TableRow>
-                          )}
-                        </TableBody>
-                      </Table>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-        </TabsContent>
-      </Tabs>
+       
+      
     </div>
   );
 }

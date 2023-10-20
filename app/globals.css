@@ -85,3 +85,6 @@
 .data-\[state\=active\]\:text-foreground{
   color: none;
 }
+.department_form{
+  box-shadow: 5px 5px 5px;
+}
