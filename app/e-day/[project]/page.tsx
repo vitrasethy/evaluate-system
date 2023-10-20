@@ -6,7 +6,7 @@ export default function page() {
     <div>
       <div>
         <h1 className="text-center my-5 text-4xl tracking-tight font-extrabold  sm:text-5xl md:text-6xl">
-          Projects
+          ITE-G8-Y4
         </h1>
         <div className="flex justify-center ">
           <Link href="/e-day/1/create" className="bg-[#024164] px-5 py-4 flex items-center text-white rounded-md mx-5 my-5 ">
