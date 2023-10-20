@@ -30,6 +30,7 @@ export default function award() {
           <p className="max-w-2xl mx-auto text-3xl mt-8">Award of the year</p>
         </div>
       </section>
+{/* <TextWithAnimation text={'hi how are you today hjjhgjh hgjgjkh g jhgkjg jh jk hghjg'}/> */}
 
       <section className=" flex justify-center">
         <div className="flex flex-wrap justify-center gap-8 p-8 items-center border-2 bg-slate-50 w-[70%]">
@@ -38,9 +39,7 @@ export default function award() {
             <div className="bg-gradient-to-r from-[#cc9910] to-[#fcf97c] shadow-2xl border-1 py-6 px-10 rounded-full">
               <div className="flex gap-8 text-3xl">
                 <p>1st</p>
-                  <span className="moving-text-button">
                 <TextWithAnimation text={'A NEW MODEL FOR SIMULATING AND EVALUATING'}/>
-                  </span>
                 <p>100 point</p>
                 <p>003</p>
               </div>
@@ -55,12 +54,10 @@ export default function award() {
           </div>
 
           <div className="relative">
-            <div className="bg-gradient-to-r from-[#cc9910] to-[#fcf97c] shadow-2xl border-1 py-6 px-10 rounded-full">
+          <div className="bg-gradient-to-r from-[#cc9910] to-[#fcf97c] shadow-2xl border-1 py-6 px-10 rounded-full">
               <div className="flex gap-8 text-3xl">
                 <p>2nd</p>
-                  <span className="moving-text-button">
-                <TextWithAnimation text={'A NEW MODEL FOR SIMULATING AND EVALUATING CONGESTION CAUSE AT SIGNALIZED INTERSECTION '}/>
-                  </span>
+                <TextWithAnimation text={'A NEW MODEL FOR SIMULATING AND EVALUATING yoaidhadfasfd'}/>
                 <p>100 point</p>
                 <p>003</p>
               </div>

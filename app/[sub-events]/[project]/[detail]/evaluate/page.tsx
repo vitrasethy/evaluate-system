@@ -1,7 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
+import { hostname } from 'os'
 
 export default function evaluate() {
+  const total =()=>{
+    
+  }
   return (
     <main className='md:mx-[3%] mt-[3%]'>
       <div className='h-auto flex justify-center'>
@@ -13,7 +17,7 @@ export default function evaluate() {
             <Image alt='' src="/bgcol.png" width={400} height={400}/>
           </div>
           <div>
-          <h2 className="my-4 text-3xl sm:text-4xl font-bold text-gray-900 text-center">EVALUATION FORM</h2> 
+          <h2 className="my-4 text-3xl lg:text-4xl 2xl:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#024164] to-[#025886] text-center drop-shadow-[3px_1px_rgba(2,65,100,0.3)] ">EVALUATION FORM</h2> 
           </div>
           </div>
 
@@ -512,19 +516,17 @@ export default function evaluate() {
                 </li>
               </ul>
           </div>
-          <div className='flex border-sky-700 border-2 justify-around items-center py-4 px-6 rounded-lg bg-[#014164] text-white'>
-            <p className='w-1/2 text-lg sm:text-xl font-semibold p-2.5'>TOTAL SCORE : </p>
-            <p className='w-1/2'> </p>
-          </div>
-
-          <label className='flex justify-around items-center border-2 p-4 md:px-6 bg-[#f7f9f9] border-gray-300 rounded-lg '>
-      <div className='md:w-1/2 p-2.5 md:text-lg'>
+          <label className='flex max-md:flex-wrap justify-around items-center border-2 p-4 bg-[#f7f9f9] border-gray-300 rounded-lg '>
+      <div className='md:w-2/5 p-2.5 md:text-lg'>
         <p>COMMENTS:</p>
       </div>
-      <div>
+      <div className='md:w-1/2'>
       <textarea name="comment" rows={4} cols={60} className='border-2 border-gray-400 p-4 w-full' placeholder='write your comments...' />
       </div>
     </label>
+      <div className='flex justify-end'>
+      <button className='bg-[#024164] hover:bg-[#03679d] px-3 py-3 text-sm md:text-lg leading-5 rounded-md font-semibold text-white' type="submit">Submit Form</button>
+      </div>
 
         </form>
       </div>
