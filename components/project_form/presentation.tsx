@@ -71,7 +71,7 @@ const data: Present[] = [
     complete: true,
   },
   {
-    id: "IG7-1",
+    id: "IG8-1",
     year: 4,
     department: "Interactive Language Learning Platform",
     leader: "Bong Chhay",
@@ -82,7 +82,7 @@ const data: Present[] = [
     complete: false,
   },
   {
-    id: "IG7-3",
+    id: "IG8-3",
     year: 5,
     department: "Predictive Healthcare Analytics",
     leader: "Veha",
