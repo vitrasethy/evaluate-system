@@ -11,7 +11,7 @@ export default function ProjectsForm() {
     <div className="flex justify-center w-full items-center">
       <Tabs
         defaultValue="account"
-        className=" w-[90%] md:w-auto shadow-2xl mx-20  rounded-xl bg-white"
+        className=" w-[90%] md:w-auto shadow-2xl border-2 mx-20  rounded-xl bg-white"
       >
         <TabsList className="flex grid-cols-2 mb-5 rounded-xl border-none h-10 justify-center my-4 bg-white">
           <TabsTrigger

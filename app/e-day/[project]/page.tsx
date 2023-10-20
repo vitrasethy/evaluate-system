@@ -9,7 +9,7 @@ export default function page() {
           Projects
         </h1>
         <div className="flex justify-center ">
-          <Link href="/e-day/1/create" className="bg-blue-600 px-5 py-4 flex items-center text-white rounded-md mx-5 my-5 ">
+          <Link href="/e-day/1/create" className="bg-[#024164] px-5 py-4 flex items-center text-white rounded-md mx-5 my-5 ">
             Add New
             <Image
               className="ml-2"
@@ -19,7 +19,7 @@ export default function page() {
               height={22}
             />
           </Link>
-          <Link href="/e-day/1/create-ex" className="bg-blue-600 px-5 py-4 flex items-center text-white rounded-md mx-5 my-5">
+          <Link href="/e-day/1/create-ex" className="bg-[#024164] px-5 py-4 flex items-center text-white rounded-md mx-5 my-5">
             Add New (Excel)
             <Image
               className="ml-2"
