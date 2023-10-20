@@ -253,7 +253,7 @@ export default function ProjectsForm() {
     <div className="flex justify-center items-center">
       <div className="present ">
         <Card className="">
-          <CardContent className="mt-5">
+          <CardContent className="mt-6">
             <div className="flex justify-center">
               <div className="w-full">
                 <div className="flex items-center md:mb-5">
@@ -281,7 +281,7 @@ export default function ProjectsForm() {
                 </div>
                 <div className="md:mt-[-20px] mt-[-35px]">
                   <Table className="border-0 ">
-                    <TableHeader className="md:bg-gray-100">
+                    <TableHeader className="md:bg-gray-300">
                       {table.getHeaderGroups().map((headerGroup) => (
                         <TableRow className="" key={headerGroup.id}>
                           {headerGroup.headers.map((header) => {

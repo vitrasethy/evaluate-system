@@ -277,7 +277,7 @@ export default function ProjectsForm() {
     <div className="flex justify-center w-full items-center">
       <div className="present ">
         <Card className=" w-full">
-          <CardContent className="mt-5">
+          <CardContent className="mt-6">
             <div className="flex justify-center">
               <div className="w-full">
                 <div className="flex items-center md:mb-5">
