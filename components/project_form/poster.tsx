@@ -307,7 +307,7 @@ export default function ProjectsForm() {
                             data-state={row.getIsSelected() && "selected"}
                             className={`overflow-hidden ${
                               row.getValue("complete")
-                                ? "bg-green-100"
+                                ? "bg-green-200"
                                 : ""
                             }`}
                           >
