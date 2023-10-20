@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -113,7 +113,11 @@ export type Present = {
 export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "no",
-    header: () => <div className="text-center hidden md:block w-full font-bold text-black text-lg">No</div>,
+    header: () => (
+      <div className="text-center hidden md:block w-full font-bold text-black text-lg">
+        No
+      </div>
+    ),
     cell: ({ row }) => {
       const no = parseFloat(row.getValue("no"));
       return <div className="text-center font-medium">{no}</div>;
@@ -122,7 +126,11 @@ export const columns: ColumnDef<Present>[] = [
 
   {
     accessorKey: "id",
-    header: () => <div className="text-start hidden md:block w-full font-bold text-black text-lg">ID</div>,
+    header: () => (
+      <div className="text-start hidden md:block w-full font-bold text-black text-lg">
+        ID
+      </div>
+    ),
     cell: ({ row }) => {
       return <div className="capitalize text-start">{row.getValue("id")}</div>;
     },
@@ -131,7 +139,9 @@ export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "department",
     header: () => (
-      <div className="text-start hidden md:block w-full font-bold text-black text-lg">Project Name</div>
+      <div className="text-start hidden md:block w-full font-bold text-black text-lg">
+        Project Name
+      </div>
     ),
     cell: ({ row }) => (
       <div className="capitalize text-start">{row.getValue("department")}</div>
@@ -139,7 +149,11 @@ export const columns: ColumnDef<Present>[] = [
   },
   {
     accessorKey: "leader",
-    header: () => <div className="text-start hidden md:block w-full font-bold text-black text-lg">Leader</div>,
+    header: () => (
+      <div className="text-start hidden md:block w-full font-bold text-black text-lg">
+        Leader
+      </div>
+    ),
     cell: ({ row }) => {
       return (
         <div className="capitalize text-start">{row.getValue("leader")}</div>
@@ -149,7 +163,11 @@ export const columns: ColumnDef<Present>[] = [
   {
     accessorKey: "judge",
 
-    header: () => <div className="text-start hidden md:block w-full font-bold text-black text-lg">Judge</div>,
+    header: () => (
+      <div className="text-start hidden md:block w-full font-bold text-black text-lg">
+        Judge
+      </div>
+    ),
     cell: ({ row }) => {
       return (
         <div className="capitalize text-start flex justify-center">
@@ -162,8 +180,8 @@ export const columns: ColumnDef<Present>[] = [
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="center"
-                className="bg-gray-50 text-black">
-              
+                className="bg-gray-50 text-black"
+              >
                 <DropdownMenuLabel>Member</DropdownMenuLabel>
                 <DropdownMenuItem>Meng Srun</DropdownMenuItem>
                 <DropdownMenuItem>Mey Sorng</DropdownMenuItem>
@@ -215,9 +233,11 @@ export const columns: ColumnDef<Present>[] = [
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-gray-50 text-black">
               <DropdownMenuLabel>Action</DropdownMenuLabel>
-              <DropdownMenuSeparator />
               <DropdownMenuItem>Edit</DropdownMenuItem>
               <DropdownMenuItem>Delete</DropdownMenuItem>
+              <Link href="/e-day/1/1/evaluate">
+              <DropdownMenuItem>Evaluate</DropdownMenuItem>
+              </Link>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -225,7 +245,6 @@ export const columns: ColumnDef<Present>[] = [
     },
   },
 ];
-
 
 export default function ProjectsForm() {
   const [sorting, setSorting] = React.useState<SortingState>([]);
@@ -255,101 +274,96 @@ export default function ProjectsForm() {
     },
   });
 
-
   return (
-    <div className="flex justify-center w-full items-center">  
-        <div className="present ">
-         
-          <Card className=" w-full">
-              <CardContent className="mt-5">
-                <div className="flex justify-center">
-                  <div className="w-full">
-                    <div className="flex items-center md:mb-5">
-                      <DropdownMenu>
-                        <DropdownMenuContent align="end">
-                          {table
-                            .getAllColumns()
-                            .filter((column) => column.getCanHide())
-                            .map((column) => {
-                              return (
-                                <DropdownMenuCheckboxItem
-                                  key={column.id}
-                                  className="capitalize"
-                                  checked={column.getIsVisible()}
-                                  onCheckedChange={(value) =>
-                                    column.toggleVisibility(!!value)
-                                  }
-                                >
-                                  {column.id}
-                                </DropdownMenuCheckboxItem>
-                              );
-                            })}
-                        </DropdownMenuContent>
-                      </DropdownMenu>
-                    </div>
-                    <div className="md:mt-[-20px] mt-[-35px]">
-                      <Table className="border-0 ">
-                        <TableHeader className="md:bg-gray-300">
-                          {table.getHeaderGroups().map((headerGroup) => (
-                            <TableRow className="" key={headerGroup.id}>
-                              {headerGroup.headers.map((header) => {
-                                return (
-                                  <TableHead key={header.id}>
-                                    {header.isPlaceholder
-                                      ? null
-                                      : flexRender(
-                                          header.column.columnDef.header,
-                                          header.getContext()
-                                        )}
-                                  </TableHead>
-                                );
-                              })}
-                            </TableRow>
-                          ))}
-                        </TableHeader>
-                        <TableBody className="test hover:">
-                          {table.getRowModel().rows?.length ? (
-                            table.getRowModel().rows.map((row) => (
-                              <TableRow
-                                key={row.id}
-                                data-state={row.getIsSelected() && "selected"}
-                                className={`overflow-hidden ${
-                                  row.getValue("complete")
-                                    ? "bg-green-100"
-                                    : "bg-red-100"
-                                }`}
-                              >
-                                {row.getVisibleCells().map((cell) => (
-                                  <TableCell key={cell.id}>
-                                    {flexRender(
-                                      cell.column.columnDef.cell,
-                                      cell.getContext()
-                                    )}
-                                  </TableCell>
-                                ))}
-                              </TableRow>
-                            ))
-                          ) : (
-                            <TableRow>
-                              <TableCell
-                                colSpan={columns.length}
-                                className="h-24 text-center"
-                              >
-                                No results.
-                              </TableCell>
-                            </TableRow>
-                          )}
-                        </TableBody>
-                      </Table>
-                    </div>
-                  </div>
+    <div className="flex justify-center w-full items-center">
+      <div className="present ">
+        <Card className=" w-full">
+          <CardContent className="mt-5">
+            <div className="flex justify-center">
+              <div className="w-full">
+                <div className="flex items-center md:mb-5">
+                  <DropdownMenu>
+                    <DropdownMenuContent align="end">
+                      {table
+                        .getAllColumns()
+                        .filter((column) => column.getCanHide())
+                        .map((column) => {
+                          return (
+                            <DropdownMenuCheckboxItem
+                              key={column.id}
+                              className="capitalize"
+                              checked={column.getIsVisible()}
+                              onCheckedChange={(value) =>
+                                column.toggleVisibility(!!value)
+                              }
+                            >
+                              {column.id}
+                            </DropdownMenuCheckboxItem>
+                          );
+                        })}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </div>
-              </CardContent>
-            </Card>
-          
-        </div>
-       
-      
+                <div className="md:mt-[-20px] mt-[-35px]">
+                  <Table className="border-0 ">
+                    <TableHeader className="md:bg-gray-300">
+                      {table.getHeaderGroups().map((headerGroup) => (
+                        <TableRow className="" key={headerGroup.id}>
+                          {headerGroup.headers.map((header) => {
+                            return (
+                              <TableHead key={header.id}>
+                                {header.isPlaceholder
+                                  ? null
+                                  : flexRender(
+                                      header.column.columnDef.header,
+                                      header.getContext()
+                                    )}
+                              </TableHead>
+                            );
+                          })}
+                        </TableRow>
+                      ))}
+                    </TableHeader>
+                    <TableBody className="test hover:">
+                      {table.getRowModel().rows?.length ? (
+                        table.getRowModel().rows.map((row) => (
+                          <TableRow
+                            key={row.id}
+                            data-state={row.getIsSelected() && "selected"}
+                            className={`overflow-hidden ${
+                              row.getValue("complete")
+                                ? "bg-green-100"
+                                : "bg-red-100"
+                            }`}
+                          >
+                            {row.getVisibleCells().map((cell) => (
+                              <TableCell key={cell.id}>
+                                {flexRender(
+                                  cell.column.columnDef.cell,
+                                  cell.getContext()
+                                )}
+                              </TableCell>
+                            ))}
+                          </TableRow>
+                        ))
+                      ) : (
+                        <TableRow>
+                          <TableCell
+                            colSpan={columns.length}
+                            className="h-24 text-center"
+                          >
+                            No results.
+                          </TableCell>
+                        </TableRow>
+                      )}
+                    </TableBody>
+                  </Table>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

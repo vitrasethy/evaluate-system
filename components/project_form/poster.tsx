@@ -210,9 +210,9 @@ export const columns: ColumnDef<Poster>[] = [
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-gray-50 text-black">
               <DropdownMenuLabel>Action</DropdownMenuLabel>
-              <DropdownMenuSeparator />
               <DropdownMenuItem>Edit</DropdownMenuItem>
               <DropdownMenuItem>Delete</DropdownMenuItem>
+              <DropdownMenuItem>Evaluate</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
