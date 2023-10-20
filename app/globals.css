@@ -74,3 +74,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+.data-\[state\=active\]\:shadow-sm[data-state=active] {
+  background-color: rgb(41, 72, 112) !important;
+  transform: scale(0.9);
+  transition: all ease-in-out 0.4s; 
+  color: #fff;
+  
+}
+.data-\[state\=active\]\:text-foreground{
+  color: none;
+}
+.department_form{
+  box-shadow: 5px 5px 5px;
+}
