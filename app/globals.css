@@ -85,6 +85,4 @@
 .data-\[state\=active\]\:text-foreground{
   color: none;
 }
-.border {
-  border-width: 0px !important;
-}
+

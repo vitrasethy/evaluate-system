@@ -13,7 +13,7 @@ export default function ProjectsForm() {
         defaultValue="account"
         className=" w-[90%] md:w-auto shadow-2xl border-2 mx-20  rounded-xl bg-white"
       >
-        <TabsList className="flex justify-around mb-5 rounded-xl border-none h-10 my-4 bg-white pt-6">
+        <TabsList className="flex justify-around mb-5 rounded-xl border-none h-10 my-4 bg-white py-6">
           <TabsTrigger
             value="account"
             className="h-14 w-2/5 ml-5 rounded-xl border-[#014164] border-2 text-md "
