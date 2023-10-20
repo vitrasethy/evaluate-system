@@ -525,7 +525,7 @@ export default function evaluate() {
       </div>
     </label>
       <div className='flex justify-end'>
-      <button className='bg-[#024164] hover:bg-[#03679d] px-3 py-3 text-sm md:text-lg leading-5 rounded-md font-semibold text-white' type="submit">Submit Form</button>
+      <button className='bg-[#024164] hover:bg-[#03679d] px-4 py-4 text-sm md:text-lg leading-5 rounded-md font-semibold text-white' type="submit">Submit Form</button>
       </div>
 
         </form>

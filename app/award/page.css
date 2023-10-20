@@ -9,7 +9,7 @@
 .scroll-rtl {
   white-space: nowrap;
   position: absolute;
-  animation: scroll-rtl 10s linear infinite;
+  animation: scroll-rtl 15s linear infinite;
 }
 
 /* Define the keyframes for the animation */
