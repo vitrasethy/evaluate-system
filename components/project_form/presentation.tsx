@@ -2,7 +2,6 @@
 import Link from "next/link";
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -43,7 +42,7 @@ const data: Present[] = [
     year: 1,
     department: "Smart Attendance Tracker",
     leader: "MeySorng",
-    judge: "People",
+    judge: "4",
     generation: "8",
     no: 1,
     score: 60,
@@ -54,7 +53,7 @@ const data: Present[] = [
     year: 2,
     department: "Efficient Inventory Management System",
     leader: "BongVitra",
-    judge: "People",
+    judge: "4",
     generation: "6",
     no: 2,
     score: 100,
@@ -65,7 +64,7 @@ const data: Present[] = [
     year: 3,
     department: "AR-powered Tourist Guide",
     leader: "Rithy",
-    judge: "People",
+    judge: "4",
     generation: "7",
     no: 3,
     score: 50,
@@ -76,7 +75,7 @@ const data: Present[] = [
     year: 4,
     department: "Interactive Language Learning Platform",
     leader: "Bong Chhay",
-    judge: "People",
+    judge: "4",
     generation: "5",
     no: 4,
     score: 98,
@@ -87,7 +86,7 @@ const data: Present[] = [
     year: 5,
     department: "Predictive Healthcare Analytics",
     leader: "Veha",
-    judge: "People",
+    judge: "4",
     generation: "8",
     no: 5,
     score: 74,
@@ -120,7 +119,7 @@ export const columns: ColumnDef<Present>[] = [
     ),
     cell: ({ row }) => {
       const no = parseFloat(row.getValue("no"));
-      return <div className="text-center font-medium">{no}</div>;
+      return <div className="text-center font-medium text-base">{no}</div>;
     },
   },
 
@@ -132,7 +131,7 @@ export const columns: ColumnDef<Present>[] = [
       </div>
     ),
     cell: ({ row }) => {
-      return <div className="capitalize text-start">{row.getValue("id")}</div>;
+      return <div className="capitalize text-start text-base">{row.getValue("id")}</div>;
     },
   },
 
@@ -144,7 +143,7 @@ export const columns: ColumnDef<Present>[] = [
       </div>
     ),
     cell: ({ row }) => (
-      <div className="capitalize text-start">{row.getValue("department")}</div>
+      <div className="capitalize text-start text-base font-medium">{row.getValue("department")}</div>
     ),
   },
   {
@@ -156,7 +155,7 @@ export const columns: ColumnDef<Present>[] = [
     ),
     cell: ({ row }) => {
       return (
-        <div className="capitalize text-start">{row.getValue("leader")}</div>
+        <div className="capitalize text-start text-base">{row.getValue("leader")}</div>
       );
     },
   },
@@ -170,11 +169,11 @@ export const columns: ColumnDef<Present>[] = [
     ),
     cell: ({ row }) => {
       return (
-        <div className="capitalize text-start flex justify-center">
+        <div className="capitalize text-start flex justify-center text-base">
           <div className="text-start font-medium">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="h-8 w-8 p-0">
+                <Button variant="ghost" className="h-8 w-8 p-0 text-base">
                   {row.getValue("judge")}
                 </Button>
               </DropdownMenuTrigger>
@@ -210,7 +209,7 @@ export const columns: ColumnDef<Present>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="lowercase text-center">{row.getValue("score")}</div>
+      <div className="lowercase text-center text-base">{row.getValue("score")}</div>
     ),
   },
   {
@@ -333,7 +332,7 @@ export default function ProjectsForm() {
                             className={`overflow-hidden ${
                               row.getValue("complete")
                                 ? "bg-green-100"
-                                : "bg-red-100"
+                                : ""
                             }`}
                           >
                             {row.getVisibleCells().map((cell) => (
