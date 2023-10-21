@@ -1,27 +1,31 @@
-import DepartmentsForm from "@/components/deparments-form";
-import Image from "next/image";
-import Link from "next/link";
-export default function page() {
-  return (
-    <div>
-      <div>
-        <h1 className="text-4xl tracking-tight font-extrabold  sm:text-5xl md:text-6xl text-center my-10">
-          Engineering's Day
-        </h1>
-        <div className="flex justify-center ">
-          <Link href="/e-day/create" className="bg-blue-600 px-5 py-4 flex items-center text-white rounded-md">
-            Add New
-            <Image
-              className="ml-2"
-              src="/add.svg"
-              alt=""
-              width={22}
-              height={22}
-            />
-          </Link>
+"use client";
+import React from 'react';
+
+const Test = () => {
+    return (
+        <div>
+            {isMobile() ? (
+                <h1>This is a mobile view</h1>
+            ) : (
+                <h1>This is a computer view</h1>
+            )}
         </div>
-        <DepartmentsForm />
-      </div>
-    </div>
-  );
-}
+    );
+};
+
+const isMobile = () => {
+    const userAgent =
+        typeof window.navigator === 'undefined' ? '' : navigator.userAgent;
+    const mobile = Boolean(
+        userAgent.match(
+            /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+        )
+    );
+    return mobile;
+};
+
+export default Test;
+
+
+
+
