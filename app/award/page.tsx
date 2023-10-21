@@ -12,7 +12,7 @@ export default function award() {
     animation: "scroll-rtl 15s linear forwards"
   }
   function handleText(texts: string | any[]){
-    if (texts.length > 20){
+    if (texts.length > 30){
       setText(true)
     }
     else{
