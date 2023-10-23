@@ -1,37 +1,19 @@
 import ProjectsForm from "@/components/project_form/projects-form";
-import Link from "next/link";
-import Image from "next/image";
+import MobileProjForm from "@/components/mobile_form/project";
 export default function page() {
   return (
     <div>
       <div>
-        <h1 className="text-center my-5 text-4xl tracking-tight font-extrabold  sm:text-5xl md:text-6xl">
-          ITE-G8-Y4
+        <h1 className="text-4xl text-center my-6 tracking-tight font-extrabold sm:text-5xl md:text-6xl">
+          List of Projects
         </h1>
-        <div className="flex justify-center ">
-          <Link href="/e-day/1/create" className="bg-[#024164] px-5 py-4 flex items-center text-white rounded-md mx-5 my-5 ">
-            Add New
-            <Image
-              className="ml-2"
-              src="/add.svg"
-              alt=""
-              width={22}
-              height={22}
-            />
-          </Link>
-          <Link href="/e-day/1/create-ex" className="bg-[#024164] px-5 py-4 flex items-center text-white rounded-md mx-5 my-5">
-            Add New (Excel)
-            <Image
-              className="ml-2"
-              src="/add.svg"
-              alt=""
-              width={22}
-              height={22}
-            />
-          </Link>
+        <div className="hidden lg:block">
+          <ProjectsForm />
         </div>
-        <ProjectsForm/>
+        <div className="lg:hidden">
+          <MobileProjForm />
+        </div>
       </div>
     </div>
-  )
+  );
 }
