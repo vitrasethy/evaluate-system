@@ -1,31 +1,25 @@
-"use client";
-import React from 'react';
+import DepartmentsForm from "@/components/deparments-form";
+import MobileDepartForm from "@/components/mobile_form/department";
 
-const Test = () => {
-    return (
-        <div>
-            {isMobile() ? (
-                <h1>This is a mobile view</h1>
-            ) : (
-                <h1>This is a computer view</h1>
-            )}
-        </div>
-    );
-};
+// async function getData() {
+//   const res = await fetch('https://api.example.com/...')
 
-const isMobile = () => {
-    const userAgent =
-        typeof window.navigator === 'undefined' ? '' : navigator.userAgent;
-    const mobile = Boolean(
-        userAgent.match(
-            /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
-        )
-    );
-    return mobile;
-};
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch data')
+//   }
 
-export default Test;
+//   return res.json()
+// }
 
+export default async function page() {
+  // const data = await getData()
 
-
-
+  return (
+    <div>
+      <div className="hidden lg:block"><DepartmentsForm/></div>
+      <div className="lg:hidden">
+        <MobileDepartForm />
+      </div>
+    </div>
+  );
+}

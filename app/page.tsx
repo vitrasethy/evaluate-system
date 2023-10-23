@@ -6,13 +6,11 @@ export default function home() {
       <section className="h-[20vh] flex justify-center items-center mt-10 mb-10">
         <div className="text-center">
           <h1 className="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
-            Evaluation System
+            List of all the events <br /> and their details
           </h1>
-          <p className="max-w-2xl mx-auto text-xl font-medium max-sm:mx-4 mt-8">
-            The primary goals of evaluation system are to provide
-            an equitable measurement of an student's contribution to the
-            project.
-          </p>
+          {/* <p className="max-w-2xl mx-auto text-4xl font-medium max-sm:mx-4 mt-8">
+            List of all the events and their details
+          </p> */}
         </div>
       </section>
 
@@ -51,9 +49,12 @@ export default function home() {
                 <p className="text-4xl font-semibold text-white sm:mt-3">
                   Engineering's Day
                 </p>
-                <p className="mt-3 sm:mt-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Numquam accusantium, illum recusand illum recusand
+                <p className="mt-3 text-gray-400 sm:mt-3">
+                  This event aim to promote engineering students
+                  creativity and innovationthrough researches and development
+                  project competitions, to acknowledge outstanding students of
+                  the year, and to recognize students involved in social
+                  activities.
                 </p>
                 <div className="flex mt-8 sm:hidden">
                   <svg
