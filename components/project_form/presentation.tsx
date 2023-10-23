@@ -24,7 +24,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
@@ -46,7 +45,7 @@ const data: Present[] = [
     generation: "8",
     no: 1,
     score: 60,
-    complete: true,
+    complete: 1,
   },
   {
     id: "IG8-3",
@@ -57,7 +56,7 @@ const data: Present[] = [
     generation: "6",
     no: 2,
     score: 100,
-    complete: false,
+    complete: 2,
   },
   {
     id: "IG8-2",
@@ -68,7 +67,7 @@ const data: Present[] = [
     generation: "7",
     no: 3,
     score: 50,
-    complete: true,
+    complete: 3,
   },
   {
     id: "IG8-1",
@@ -79,7 +78,7 @@ const data: Present[] = [
     generation: "5",
     no: 4,
     score: 98,
-    complete: false,
+    complete: 2,
   },
   {
     id: "IG8-3",
@@ -90,7 +89,7 @@ const data: Present[] = [
     generation: "8",
     no: 5,
     score: 74,
-    complete: true,
+    complete: 1,
   },
 ];
 export type Present = {
@@ -107,7 +106,7 @@ export type Present = {
   generation: string;
   no: number;
   score: number;
-  complete: boolean;
+  complete: number;
 };
 export const columns: ColumnDef<Present>[] = [
   {
@@ -131,7 +130,11 @@ export const columns: ColumnDef<Present>[] = [
       </div>
     ),
     cell: ({ row }) => {
-      return <div className="capitalize text-start text-base">{row.getValue("id")}</div>;
+      return (
+        <div className="capitalize text-start text-base">
+          {row.getValue("id")}
+        </div>
+      );
     },
   },
 
@@ -143,7 +146,9 @@ export const columns: ColumnDef<Present>[] = [
       </div>
     ),
     cell: ({ row }) => (
-      <div className="capitalize text-start text-base font-medium">{row.getValue("department")}</div>
+      <div className="capitalize text-start text-base font-medium">
+        {row.getValue("department")}
+      </div>
     ),
   },
   {
@@ -155,7 +160,9 @@ export const columns: ColumnDef<Present>[] = [
     ),
     cell: ({ row }) => {
       return (
-        <div className="capitalize text-start text-base">{row.getValue("leader")}</div>
+        <div className="capitalize text-start text-base">
+          {row.getValue("leader")}
+        </div>
       );
     },
   },
@@ -209,13 +216,19 @@ export const columns: ColumnDef<Present>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="lowercase text-center text-base">{row.getValue("score")}</div>
+      <div className="lowercase text-center text-base">
+        {row.getValue("score")}
+      </div>
     ),
   },
   {
     accessorKey: "complete",
     header: () => {},
-    cell: () => {},
+    cell: ({ row }) => (
+      <div className=" text-center text-base ">
+        <Link href="/e-day/1/1/evaluate">Evaluate</Link>
+      </div>
+    ),
   },
   {
     accessorKey: "year",
@@ -234,9 +247,6 @@ export const columns: ColumnDef<Present>[] = [
               <DropdownMenuLabel>Action</DropdownMenuLabel>
               <DropdownMenuItem>Edit</DropdownMenuItem>
               <DropdownMenuItem>Delete</DropdownMenuItem>
-              <Link href="/e-day/1/1/evaluate">
-              <DropdownMenuItem>Evaluate</DropdownMenuItem>
-              </Link>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -330,8 +340,12 @@ export default function ProjectsForm() {
                             key={row.id}
                             data-state={row.getIsSelected() && "selected"}
                             className={`overflow-hidden ${
-                              row.getValue("complete")
+                              row.getValue("complete") === 1
                                 ? "bg-green-200"
+                                : ""
+                            } ${
+                              row.getValue("complete") == 2
+                                ? "bg-yellow-200"
                                 : ""
                             }`}
                           >
