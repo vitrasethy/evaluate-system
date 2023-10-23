@@ -1,3 +1,5 @@
+
+
 #rssBlock{
   font-size: 1.875rem;
   color: rgb(49, 48, 48);
@@ -21,16 +23,16 @@
 .marqueeStyle {
   display:inline-block;
   /* Apply animation to this element */
-  -webkit-animation: scrolling-left1 22s linear infinite;
-  animation: scrolling-left1 22s linear infinite;
+  -webkit-animation: scrolling-left1 20s linear infinite;
+  animation: scrolling-left1 20s linear infinite;
 }
 
 .marqueeStyle2 {
   display:inline-block;
   /* Apply animation to this element */
-  -webkit-animation: scrolling-left2 22s linear infinite;
-  animation: scrolling-left2 22s linear infinite;
-  animation-delay: 11s;
+  -webkit-animation: scrolling-left2 20s linear infinite;
+  animation: scrolling-left2 20s linear infinite;
+  animation-delay: 10s;
 }
 /* scrolling-left is continuous/repeatly text */
 @keyframes scrolling-left1 {
