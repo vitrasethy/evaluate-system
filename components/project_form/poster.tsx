@@ -25,7 +25,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
@@ -47,7 +46,7 @@ const data: Poster[] = [
     generation: "8",
     no: 1,
     score: 60,
-    complete: true,
+    complete: 1,
   },
 
   {
@@ -59,7 +58,7 @@ const data: Poster[] = [
     generation: "7",
     no: 3,
     score: 50,
-    complete: true,
+    complete: 2,
   },
   {
     id: "IG8-2",
@@ -70,7 +69,7 @@ const data: Poster[] = [
     generation: "5",
     no: 4,
     score: 98,
-    complete: false,
+    complete: 3,
   },
 ];
 export type Poster = {
@@ -85,7 +84,7 @@ export type Poster = {
   generation: string;
   no: number;
   score: number;
-  complete: boolean;
+  complete: number;
 };
 export const columns: ColumnDef<Poster>[] = [
   {
@@ -306,8 +305,12 @@ export default function ProjectsForm() {
                             key={row.id}
                             data-state={row.getIsSelected() && "selected"}
                             className={`overflow-hidden ${
-                              row.getValue("complete")
+                              row.getValue("complete") == 1
                                 ? "bg-green-200"
+                                : ""
+                            }${
+                              row.getValue("complete") == 2
+                                ? "bg-yellow-200"
                                 : ""
                             }`}
                           >
