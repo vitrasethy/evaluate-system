@@ -34,8 +34,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Hind } from "next/font/google";
-import { NonceProvider } from "react-select";
 
 const data: Present[] = [
   {
@@ -206,13 +204,13 @@ export const columns: ColumnDef<Present>[] = [
           <div className="text-start font-medium">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <div className="h-8 w-8 p-0 text-base cursor-pointer">
+                <div className=" text-base cursor-pointer">
                   {row.getValue("judge")}
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="center"
-                className="bg-gray-50 text-black"
+                className="bg-gray-50 text-black text-start"
               >
                 <DropdownMenuLabel>Member</DropdownMenuLabel>
                 <DropdownMenuItem> {row.getValue("judge1")}</DropdownMenuItem>
@@ -251,7 +249,7 @@ export const columns: ColumnDef<Present>[] = [
     accessorKey: "complete",
     header: () => {},
     cell: ({ row }) => (
-      <div className=" text-center text-base ">
+      <div className=" text-start text-base ">
         <Link href="/e-day/1/1/evaluate">Evaluate</Link>
       </div>
     ),
@@ -364,8 +362,8 @@ export default function ProjectsForm() {
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </div>
-                <div className="md:mt-[-20px] mt-[-35px]">
-                  <Table className="border-0 ">
+                <div className="md:mt-[-20px] mt-[-35px] ">
+                  <Table className="rounded-xl">
                     <TableHeader className="md:bg-gray-300">
                       {table.getHeaderGroups().map((headerGroup) => (
                         <TableRow className="" key={headerGroup.id}>

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 
 import {
@@ -47,6 +48,10 @@ const data: Poster[] = [
     no: 1,
     score: 60,
     complete: 1,
+    judge1: "neng",
+    judge2: "mey",
+    judge3: "thy",
+    judge4: "tra",
   },
 
   {
@@ -59,6 +64,10 @@ const data: Poster[] = [
     no: 3,
     score: 50,
     complete: 2,
+    judge1: "Amelia",
+    judge2: "Ava",
+    judge3: "Charlotte",
+    judge4: "Emma",
   },
   {
     id: "IG8-2",
@@ -70,6 +79,10 @@ const data: Poster[] = [
     no: 4,
     score: 98,
     complete: 3,
+    judge1: "Evelyn",
+    judge2: "Isabella",
+    judge3: "Lily",
+    judge4: "Luna",
   },
 ];
 export type Poster = {
@@ -84,7 +97,11 @@ export type Poster = {
   generation: string;
   no: number;
   score: number;
-  complete: number;
+  complete: number; 
+  judge1: string;
+  judge2: string;
+  judge3: string;
+  judge4: string;
 };
 export const columns: ColumnDef<Poster>[] = [
   {
@@ -159,10 +176,10 @@ export const columns: ColumnDef<Poster>[] = [
                 className="bg-gray-50 text-black"
               >
                 <DropdownMenuLabel>Member</DropdownMenuLabel>
-                <DropdownMenuItem>Meng Srun</DropdownMenuItem>
-                <DropdownMenuItem>Mey Sorng</DropdownMenuItem>
-                <DropdownMenuItem>Rithy</DropdownMenuItem>
-                <DropdownMenuItem>Veha</DropdownMenuItem>
+                <DropdownMenuItem> {row.getValue("judge1")}</DropdownMenuItem>
+                <DropdownMenuItem> {row.getValue("judge2")}</DropdownMenuItem>
+                <DropdownMenuItem> {row.getValue("judge3")}</DropdownMenuItem>
+                <DropdownMenuItem> {row.getValue("judge4")}</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -192,6 +209,20 @@ export const columns: ColumnDef<Poster>[] = [
   {
     accessorKey: "complete",
     header: () => {},
+    cell: ({ row }) => (
+      <div className=" text-center text-base ">
+        <Link href="/e-day/1/1/evaluate">Evaluate</Link>
+      </div>
+    ),
+  },
+  {
+    accessorKey: "judge1",
+    header: () => {},
+    cell: () => {},
+  },
+  {
+    accessorKey: "judge2",
+    header: () => {},
     cell: () => {},
   },
   {
@@ -207,7 +238,7 @@ export const columns: ColumnDef<Poster>[] = [
                 <MoreHorizontal className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-gray-50 text-black">
+            <DropdownMenuContent align="center" className="bg-gray-50 text-black">
               <DropdownMenuLabel>Action</DropdownMenuLabel>
               <DropdownMenuItem>Edit</DropdownMenuItem>
               <DropdownMenuItem>Delete</DropdownMenuItem>
@@ -217,6 +248,16 @@ export const columns: ColumnDef<Poster>[] = [
         </div>
       );
     },
+  },
+  {
+    accessorKey: "judge3",
+    header: () => {},
+    cell: () => {},
+  },
+  {
+    accessorKey: "judge4",
+    header: () => {},
+    cell: () => {},
   },
 ];
 

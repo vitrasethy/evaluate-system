@@ -29,11 +29,11 @@ export default function ProjectsForm() {
           </TabsTrigger>
         </TabsList>
         <div className="present ">
-          <TabsContent value="account" className=" w-[90%] md:w-auto">
+          <TabsContent value="account" className="">
             <Presentation />
           </TabsContent>
         </div>
-        <TabsContent value="password" className=" w-[90%] md:w-auto">
+        <TabsContent value="password" className="">
           <Poster />
         </TabsContent>
       </Tabs>
