@@ -1,12 +1,26 @@
+import MobileProjForm from "@/components/mobile_form/project";
 import ProjectsForm from "@/components/project_form/projects-form";
+import Link from "next/link";
+
 export default function page() {
   return (
     <div>
-      <div>
-        <h1 className="text-center my-5 text-4xl tracking-tight font-extrabold  sm:text-5xl md:text-6xl">
-          ITE-G8-Y4
-        </h1>
+      <h1 className="my-4 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        List of Projects
+      </h1>
+      <p className="mb-6 text-center text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+        Information of Technology <br />
+        Generation 8 <br />
+        Year 3
+      </p>
+
+      <div className="hidden lg:block">
         <ProjectsForm />
+      </div>
+      <div className="lg:hidden">
+        <Link href="/e-day/1">
+          <MobileProjForm />
+        </Link>
       </div>
     </div>
   );
