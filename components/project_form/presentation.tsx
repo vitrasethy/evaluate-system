@@ -34,6 +34,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Hind } from "next/font/google";
+import { NonceProvider } from "react-select";
 
 const data: Present[] = [
   {
@@ -46,6 +48,10 @@ const data: Present[] = [
     no: 1,
     score: 60,
     complete: 1,
+    judge1: "neng",
+    judge2: "mey",
+    judge3: "thy",
+    judge4: "tra",
   },
   {
     id: "IG8-3",
@@ -57,6 +63,10 @@ const data: Present[] = [
     no: 2,
     score: 100,
     complete: 2,
+    judge1: "Amelia",
+    judge2: "Ava",
+    judge3: "Charlotte",
+    judge4: "Emma",
   },
   {
     id: "IG8-2",
@@ -68,6 +78,10 @@ const data: Present[] = [
     no: 3,
     score: 50,
     complete: 3,
+    judge1: "Evelyn",
+    judge2: "Isabella",
+    judge3: "Lily",
+    judge4: "Luna",
   },
   {
     id: "IG8-1",
@@ -79,6 +93,10 @@ const data: Present[] = [
     no: 4,
     score: 98,
     complete: 2,
+    judge1: "Asher",
+    judge2: "Benjamin",
+    judge3: "Elijah",
+    judge4: "Ezra",
   },
   {
     id: "IG8-3",
@@ -90,6 +108,10 @@ const data: Present[] = [
     no: 5,
     score: 74,
     complete: 1,
+    judge1: "Henry",
+    judge2: "Jackson",
+    judge3: "Liam",
+    judge4: "Luca",
   },
 ];
 export type Present = {
@@ -107,6 +129,10 @@ export type Present = {
   no: number;
   score: number;
   complete: number;
+  judge1: string;
+  judge2: string;
+  judge3: string;
+  judge4: string;
 };
 export const columns: ColumnDef<Present>[] = [
   {
@@ -180,19 +206,19 @@ export const columns: ColumnDef<Present>[] = [
           <div className="text-start font-medium">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="h-8 w-8 p-0 text-base">
+                <div className="h-8 w-8 p-0 text-base cursor-pointer">
                   {row.getValue("judge")}
-                </Button>
+                </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="center"
                 className="bg-gray-50 text-black"
               >
                 <DropdownMenuLabel>Member</DropdownMenuLabel>
-                <DropdownMenuItem>Meng Srun</DropdownMenuItem>
-                <DropdownMenuItem>Mey Sorng</DropdownMenuItem>
-                <DropdownMenuItem>Rithy</DropdownMenuItem>
-                <DropdownMenuItem>Veha</DropdownMenuItem>
+                <DropdownMenuItem> {row.getValue("judge1")}</DropdownMenuItem>
+                <DropdownMenuItem> {row.getValue("judge2")}</DropdownMenuItem>
+                <DropdownMenuItem> {row.getValue("judge3")}</DropdownMenuItem>
+                <DropdownMenuItem> {row.getValue("judge4")}</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -230,6 +256,18 @@ export const columns: ColumnDef<Present>[] = [
       </div>
     ),
   },
+
+  {
+    accessorKey: "judge1",
+    header: () => {},
+    cell: () => {},
+  },
+  {
+    accessorKey: "judge2",
+    header: () => {},
+    cell: () => {},
+  },
+
   {
     accessorKey: "year",
     header: () => <div className="text-start hidden md:block"></div>,
@@ -238,12 +276,15 @@ export const columns: ColumnDef<Present>[] = [
         <div className="text-start font-medium">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="h-8 w-8 p-0">
+              <div className="h-8 w-8 p-0">
                 <span className="sr-only">Open menu</span>
                 <MoreHorizontal className="h-4 w-4" />
-              </Button>
+              </div>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-gray-50 text-black">
+            <DropdownMenuContent
+              align="center"
+              className="bg-gray-50 text-black cursor-pointer"
+            >
               <DropdownMenuLabel>Action</DropdownMenuLabel>
               <DropdownMenuItem>Edit</DropdownMenuItem>
               <DropdownMenuItem>Delete</DropdownMenuItem>
@@ -252,6 +293,16 @@ export const columns: ColumnDef<Present>[] = [
         </div>
       );
     },
+  },
+  {
+    accessorKey: "judge3",
+    header: () => {},
+    cell: () => {},
+  },
+  {
+    accessorKey: "judge4",
+    header: () => {},
+    cell: () => {},
   },
 ];
 
@@ -333,12 +384,12 @@ export default function ProjectsForm() {
                         </TableRow>
                       ))}
                     </TableHeader>
-                    <TableBody className="test hover:">
-                      {table.getRowModel().rows?.length ? (
+                    <TableBody className="test border-0 rounded-none">
+                      {table.getRowModel().rows.length ? (
                         table.getRowModel().rows.map((row) => (
                           <TableRow
                             key={row.id}
-                            data-state={row.getIsSelected() && "selected"}
+                            data-state={row.getIsSelected() && ""}
                             className={`overflow-hidden ${
                               row.getValue("complete") === 1
                                 ? "bg-green-200"

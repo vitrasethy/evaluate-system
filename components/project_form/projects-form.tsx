@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 export default function ProjectsForm() {
   return (
     <div className="flex justify-center w-full items-center">
+
       <Tabs
         defaultValue="account"
         className=" w-[90%] md:w-auto shadow-2xl border-2 mx-20  rounded-xl bg-white"
@@ -36,6 +37,7 @@ export default function ProjectsForm() {
           <Poster />
         </TabsContent>
       </Tabs>
+      
     </div>
   );
 }
