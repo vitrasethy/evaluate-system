@@ -43,12 +43,22 @@ export default function MobileProjForm() {
             <CardDescription>Judge: 4 teachers</CardDescription>
           </CardHeader>
           <CardFooter className="flex justify-between">
-            <Button asChild className="bg-[#194061]">
+            {/* <Button asChild className="bg-[#194061]">
               <Link href="/e-day/1/1/evaluate">Evaluate</Link>
             </Button>
             <Button asChild className="bg-[#194061]">
               <Link href="/e-day/1/1/evaluate">Edit Evaluation</Link>
-            </Button>
+            </Button> */}
+            {/* <Link href="/e-day/1/1/evaluate">
+              <Button asChild className="bg-[#194061]">
+                Evaluate
+              </Button>
+            </Link>
+            <Link href="/e-day/1/1/evaluate">
+              <Button asChild className="bg-[#194061]">
+                Edit Evaluation
+              </Button>
+            </Link> */}
           </CardFooter>
         </Card>
       </TabsContent>
