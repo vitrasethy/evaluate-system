@@ -17,7 +17,6 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 
 import {
@@ -61,7 +60,7 @@ const data: Poster[] = [
     leader: "Rithy",
     judge: "4",
     generation: "7",
-    no: 3,
+    no: 2,
     score: 50,
     complete: 2,
     judge1: "Amelia",
@@ -76,7 +75,7 @@ const data: Poster[] = [
     leader: "Bong Chhay",
     judge: "4",
     generation: "5",
-    no: 4,
+    no: 3,
     score: 98,
     complete: 3,
     judge1: "Evelyn",
@@ -163,17 +162,17 @@ export const columns: ColumnDef<Poster>[] = [
     ),
     cell: ({ row }) => {
       return (
-        <div className="capitalize text-start flex justify-center ">
+        <div className="capitalize text-start flex justify-start ">
           <div className="text-start ">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="h-8 w-8 p-0 text-base">
+                <div className=" text-base cursor-pointer">
                   {row.getValue("judge")}
-                </Button>
+                </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="center"
-                className="bg-gray-50 text-black"
+                className="bg-gray-50 text-black cursor-pointer"
               >
                 <DropdownMenuLabel>Member</DropdownMenuLabel>
                 <DropdownMenuItem> {row.getValue("judge1")}</DropdownMenuItem>
@@ -203,7 +202,7 @@ export const columns: ColumnDef<Poster>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="lowercase text-center text-base">{row.getValue("score")}</div>
+      <div className="lowercase text-start ml-4 text-base">{row.getValue("score")}</div>
     ),
   },
   {
@@ -233,10 +232,10 @@ export const columns: ColumnDef<Poster>[] = [
         <div className="text-start font-medium">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="h-8 w-8 p-0">
+              <div className="h-8 w-8 p-0 cursor-pointer">
                 <span className="sr-only">Open menu</span>
                 <MoreHorizontal className="h-4 w-4" />
-              </Button>
+              </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="center" className="bg-gray-50 text-black">
               <DropdownMenuLabel>Action</DropdownMenuLabel>
@@ -292,7 +291,7 @@ export default function ProjectsForm() {
   return (
     <div className="flex justify-center items-center">
       <div className="present ">
-        <Card className="">
+        <Card className="border-0 rounded-t-none">
           <CardContent className="mt-6">
             <div className="flex justify-center">
               <div className="w-full">
@@ -320,7 +319,7 @@ export default function ProjectsForm() {
                   </DropdownMenu>
                 </div>
                 <div className="md:mt-[-20px] mt-[-35px]">
-                  <Table className="border-0 ">
+                  <Table className="border-2 ">
                     <TableHeader className="md:bg-gray-300">
                       {table.getHeaderGroups().map((headerGroup) => (
                         <TableRow className="" key={headerGroup.id}>

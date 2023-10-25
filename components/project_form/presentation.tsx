@@ -200,7 +200,7 @@ export const columns: ColumnDef<Present>[] = [
     ),
     cell: ({ row }) => {
       return (
-        <div className="capitalize text-start flex justify-center text-base">
+        <div className="capitalize text-start flex justify-start text-base">
           <div className="text-start font-medium">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -240,7 +240,7 @@ export const columns: ColumnDef<Present>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="lowercase text-center text-base">
+      <div className="lowercase text-start ml-4 text-base">
         {row.getValue("score")}
       </div>
     ),
@@ -333,9 +333,9 @@ export default function ProjectsForm() {
   });
 
   return (
-    <div className="flex justify-center w-full items-center">
+    <div className="flex justify-center w-full items-center ">
       <div className="present ">
-        <Card className=" w-full">
+        <Card className=" w-full border-0 rounded-t-none">
           <CardContent className="mt-5">
             <div className="flex justify-center">
               <div className="w-full">
@@ -363,7 +363,7 @@ export default function ProjectsForm() {
                   </DropdownMenu>
                 </div>
                 <div className="md:mt-[-20px] mt-[-35px] ">
-                  <Table className="rounded-xl">
+                  <Table className="border-2">
                     <TableHeader className="md:bg-gray-300">
                       {table.getHeaderGroups().map((headerGroup) => (
                         <TableRow className="" key={headerGroup.id}>
