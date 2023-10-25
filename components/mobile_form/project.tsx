@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardDescription,
@@ -8,6 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import LinkButton from "./link-button";
 
 export default function MobileProjForm() {
   return (
@@ -25,17 +24,12 @@ export default function MobileProjForm() {
             <CardDescription>Judge: 4 teachers</CardDescription>
           </CardHeader>
           <CardFooter className="flex justify-between">
-            <Button asChild className="bg-[#194061]">
-              <Link href="/e-day/1/1/evaluate">Evaluate</Link>
-            </Button>
-            <Button asChild className="bg-[#194061]">
-              <Link href="/e-day/1/1/evaluate">Edit Evaluation</Link>
-            </Button>
+            <LinkButton isEvaluated={false} />
           </CardFooter>
         </Card>
       </TabsContent>
       <TabsContent value="poster">
-        <Card className="w-full">
+        <Card className="w-full bg-green-200">
           <CardHeader>
             <CardTitle>Smart Attendance Tracker</CardTitle>
             <CardDescription>ID: IG8-1</CardDescription>
@@ -43,22 +37,7 @@ export default function MobileProjForm() {
             <CardDescription>Judge: 4 teachers</CardDescription>
           </CardHeader>
           <CardFooter className="flex justify-between">
-            {/* <Button asChild className="bg-[#194061]">
-              <Link href="/e-day/1/1/evaluate">Evaluate</Link>
-            </Button>
-            <Button asChild className="bg-[#194061]">
-              <Link href="/e-day/1/1/evaluate">Edit Evaluation</Link>
-            </Button> */}
-            {/* <Link href="/e-day/1/1/evaluate">
-              <Button asChild className="bg-[#194061]">
-                Evaluate
-              </Button>
-            </Link>
-            <Link href="/e-day/1/1/evaluate">
-              <Button asChild className="bg-[#194061]">
-                Edit Evaluation
-              </Button>
-            </Link> */}
+            <LinkButton isEvaluated={true} />
           </CardFooter>
         </Card>
       </TabsContent>

@@ -3,6 +3,7 @@ import React from "react";
 import Drop from "./dropdown";
 import Image from "next/image";
 import Link from "next/link";
+import { Hamburger } from "./hamburger";
 
 export default function Navbar() {
   return (
@@ -33,11 +34,9 @@ export default function Navbar() {
           <Link href="/">
             <Image src="/logoFE.webp" alt="" width={50} height={50} />
           </Link>
-          <Drop />
+          <Hamburger />
         </div>
       </div>
-
-      <div></div>
     </div>
   );
 }
