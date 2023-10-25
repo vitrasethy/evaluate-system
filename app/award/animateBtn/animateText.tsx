@@ -25,7 +25,6 @@ function TextWithAnimation({ text }: { text:any}) {
     }
     
   }, [text]); // Run the effect whenever the text prop changes
-
   // Return the JSX element with the text and the animation class
   return (
       //   <div className="relative moving-text-button">
