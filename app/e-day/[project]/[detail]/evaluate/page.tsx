@@ -3,9 +3,7 @@ import Image from 'next/image'
 import { hostname } from 'os'
 
 export default function evaluate() {
-  const total =()=>{
-    
-  }
+
   return (
     <main className='md:mx-[3%] mt-[3%]'>
       <div className='h-auto flex justify-center'>
@@ -18,6 +16,10 @@ export default function evaluate() {
           </div>
           <div>
           <h2 className="my-4 text-3xl lg:text-4xl 2xl:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#024164] to-[#025886] text-center drop-shadow-[3px_1px_rgba(2,65,100,0.3)] ">EVALUATION FORM</h2> 
+          <div className='font-semibold md:text-xl'>
+          <p>Project Code: </p>
+          <p>Project Name: A NEW MODEL FOR</p>
+          </div>
           </div>
           </div>
 

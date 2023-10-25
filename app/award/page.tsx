@@ -1,43 +1,59 @@
 "use client";
 import Image from "next/image";
 import "../award/page.css";
-
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import TextWithAnimation from "./animateBtn/animateText";
 
 export default function award() {
-  function handleScroll(event: any) {
-    if (event.key === 'Enter'){
-      window.scroll({
-        top: document.body.offsetHeight,
-        left: 0, 
-        behavior: 'smooth',
-      });
-    }
-  }
-
-
+  const [isRunning, setIsRunning] = useState(false);
+  const [isRunning2, setIsRunning2] = useState(false);
   const [numParticles, setNumParticles] = useState(30);
+  let enterCount = useRef(0);
 
-  // Create an array of particles
   const particles = [];
   for (let i = 0; i < numParticles; i++) {
     particles.push(<div className="particle" key={i}></div>);
   }
 
-  // Use an effect to update the number of particles every second
   useEffect(() => {
     const interval = setInterval(() => {
-      // Increase or decrease the number of particles randomly
       const change = Math.floor(Math.random() * 3) - 1;
       setNumParticles((prev) => Math.max(0, prev + change));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
 
+  document.addEventListener('keydown', function(event){
+    if (event.key === "Enter"){
+      window.scroll({
+        top: document.body.offsetHeight,
+        left: 0, 
+        behavior: 'smooth',
+      });
+    }
+}
+)
 
+  useEffect(() => {
+    function handleKeyDown(event: { key: string; }) {
+      if (event.key === "Enter") {
+        enterCount.current++;
+        if (enterCount.current === 2) {
+          setIsRunning((prev) => !prev);
+        }
+        if (enterCount.current === 3){
+          setIsRunning2((prev) => !prev);
+        }
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isRunning]);
+
+console.log(enterCount)
   return (
-    <main className="bg-[#070707]" onKeyDown={handleScroll}>
+    <main className="bg-[#070707]">
       <section className="first-screen">
       <div id="particle-container">{particles}</div>
         <div className="text-center h-[85vh] flex flex-col justify-center items-center">
@@ -64,22 +80,27 @@ export default function award() {
           <div className="after"></div>
         </div>
         <div className=" h-screen flex justify-center items-center">
-          <div className="flex justify-center gap-8 items-center bg-[url('/reward3.jpeg')] bg-no-repeat bg-cover border-2 border-gray-500">
-            <div className=" rounded-md bg-sky-950/30 backdrop-brightness-[.6] p-8">
-              <div className=" ">
-
+          <div className="flex justify-center w-[53%] gap-8 items-center bg-[url('/reward3.jpeg')] bg-no-repeat bg-cover border-2 border-gray-500">
+            <div className=" rounded-md bg-sky-950/30 backdrop-brightness-[.6] w-full p-8">
               <h3 className="text-center text-4xl pb-16 font-semibold text-white">Leader Board</h3>
-            <div className="relative">
+
+            <div className="relative w-auto">
               <div className="bg-gradient-to-r from-[#cc9910] to-[#fcf97c] shadow-lg border-1 py-6 px-10 rounded-full">
                 <div className="flex gap-8 text-3xl">
                   <p>1st</p>
-                  <TextWithAnimation
-                    text={
-                      "GASTROMOD: AN INTERACTIVE TOOL FOR 3D GASTROPOD MODELING"
-                    }
-                  />
+
+                  {isRunning2&&(
+                    <div className="flex gap-8">
+                    <TextWithAnimation
+                      text={
+                        "GASTROMOD: AN INTERACTIVE TOOL FOR 3D GASTROPOD MODELING"
+                      }
+                      />
                   <p>100&nbsp;point</p>
                   <p>003</p>
+                  </div>
+                      )}
+
                 </div>
               </div>
               <Image
@@ -95,10 +116,14 @@ export default function award() {
               <div className="bg-gradient-to-r from-[#C0C0C0] to-[#e9e9eb] shadow-lg border-1 py-6 px-10 rounded-full">
                 <div className="flex gap-8 text-3xl">
                   <p>2nd</p>
+                  {isRunning &&(
+                  <div className="flex gap-8">
                   <TextWithAnimation text={"ASEAN FACTORI 4.0 PROJECT ASEAN FACTORI 4.0 PROJECT"} />
                   <p>100&nbsp;point</p>
                   <p>003</p>
-                </div>
+                  </div>
+                  )}
+                  </div>
               </div>
               <Image
                 src="/silver.png"
@@ -113,13 +138,17 @@ export default function award() {
               <div className="bg-gradient-to-r from-[#ca6533] to-[#F0C9BA] shadow-lg border-1 py-6 px-10 rounded-full">
                 <div className="flex gap-8 text-3xl">
                   <p>2nd</p>
-                  <TextWithAnimation
+                  {isRunning2&&(
+                    <div className="flex gap-8">
+                    <TextWithAnimation
                     text={
                       "A NEW MODEL FOR SIMULATING AND EVALUATING CONGESTION CAUSE AT SIGNALIZED INTERSECTION"
                     }
                   />
                   <p>100&nbsp;point</p>
                   <p>003</p>
+                  </div>
+                      )}
                 </div>
               </div>
               <Image
@@ -135,7 +164,6 @@ export default function award() {
             </div>
               </div>
           </div>
-        </div>
       </section>
     </main>
   );
