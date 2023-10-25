@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -47,6 +47,10 @@ const data: Poster[] = [
     no: 1,
     score: 60,
     complete: 1,
+    judge1: "Olivia",
+    judge2: "Emma",
+    judge3: "Amelia",
+    judge4: "Sophia",
   },
 
   {
@@ -59,6 +63,10 @@ const data: Poster[] = [
     no: 3,
     score: 50,
     complete: 2,
+    judge1: "Ava",
+    judge2: "Isabella",
+    judge3: "Mia",
+    judge4: "Luna",
   },
   {
     id: "IG8-2",
@@ -70,6 +78,10 @@ const data: Poster[] = [
     no: 4,
     score: 98,
     complete: 3,
+    judge1: "Evelyn",
+    judge2: "Charlotte",
+    judge3: "Sophia",
+    judge4: "Isabella",
   },
 ];
 export type Poster = {
@@ -85,6 +97,10 @@ export type Poster = {
   no: number;
   score: number;
   complete: number;
+  judge1: string;
+  judge2: string;
+  judge3: string;
+  judge4: string;
 };
 export const columns: ColumnDef<Poster>[] = [
   {
@@ -146,23 +162,24 @@ export const columns: ColumnDef<Poster>[] = [
     ),
     cell: ({ row }) => {
       return (
-        <div className="capitalize text-start flex justify-center ">
+        <div className="capitalize text-start flex justify-start ">
           <div className="text-start ">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="h-8 w-8 p-0 text-base">
+                <div className="h-8 w-8 p-0 text-base">
                   {row.getValue("judge")}
-                </Button>
+                </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="center"
                 className="bg-gray-50 text-black"
               >
                 <DropdownMenuLabel>Member</DropdownMenuLabel>
-                <DropdownMenuItem>Meng Srun</DropdownMenuItem>
-                <DropdownMenuItem>Mey Sorng</DropdownMenuItem>
-                <DropdownMenuItem>Rithy</DropdownMenuItem>
-                <DropdownMenuItem>Veha</DropdownMenuItem>
+                <DropdownMenuItem>{row.getValue("judge1")}</DropdownMenuItem>
+                <DropdownMenuItem>{row.getValue("judge2")}</DropdownMenuItem>
+                <DropdownMenuItem>{row.getValue("judge3")}</DropdownMenuItem>
+                <DropdownMenuItem>{row.getValue("judge4")}</DropdownMenuItem>
+
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -186,14 +203,29 @@ export const columns: ColumnDef<Poster>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="lowercase text-center text-base">{row.getValue("score")}</div>
+      <div className="lowercase text-start ml-4 text-base">{row.getValue("score")}</div>
     ),
   },
   {
     accessorKey: "complete",
     header: () => {},
-    cell: () => {},
+    cell: ({ row }) => (
+      <div className=" text-center text-base ">
+        <Link href="/e-day/1/1/evaluate">Evaluate</Link>
+      </div>
+    ),
   },
+  {
+    accessorKey: "judge1",
+    header: () => {},
+    cell: () => {}
+  },
+  {
+    accessorKey: "judge2",
+    header: () => {},
+    cell: () => {}
+  },
+ 
   {
     accessorKey: "year",
     header: () => <div className="text-start hidden md:block"></div>,
@@ -202,10 +234,10 @@ export const columns: ColumnDef<Poster>[] = [
         <div className="text-start font-medium">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="h-8 w-8 p-0">
+              <div className="h-8 w-8 p-0">
                 <span className="sr-only">Open menu</span>
                 <MoreHorizontal className="h-4 w-4" />
-              </Button>
+              </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-gray-50 text-black">
               <DropdownMenuLabel>Action</DropdownMenuLabel>
@@ -217,6 +249,16 @@ export const columns: ColumnDef<Poster>[] = [
         </div>
       );
     },
+  },
+  {
+    accessorKey: "judge3",
+    header: () => {},
+    cell: () => {}
+  },
+  {
+    accessorKey: "judge4",
+    header: () => {},
+    cell: () => {}
   },
 ];
 

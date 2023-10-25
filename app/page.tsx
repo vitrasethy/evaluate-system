@@ -1,6 +1,20 @@
 import Link from "next/link";
+async function getData() {
+  const res = await fetch('https://api.example.com/...')
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+ 
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
+  }
+ 
+  return res.json()
+}
 
-export default function home() {
+export default async function home() {
+  const data = await getData()
+  
   return (
     <main>
       <section className="h-[20vh] flex justify-center items-center mt-10 mb-10">
@@ -8,9 +22,6 @@ export default function home() {
           <h1 className="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
             List of all the events <br /> and their details
           </h1>
-          {/* <p className="max-w-2xl mx-auto text-4xl font-medium max-sm:mx-4 mt-8">
-            List of all the events and their details
-          </p> */}
         </div>
       </section>
 
