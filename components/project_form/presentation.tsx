@@ -176,7 +176,7 @@ export const columns: ColumnDef<Present>[] = [
     ),
     cell: ({ row }) => {
       return (
-        <div className="capitalize text-start flex justify-center text-base">
+        <div className="capitalize text-start flex justify-start text-base">
           <div className="text-start font-medium">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -216,7 +216,7 @@ export const columns: ColumnDef<Present>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="lowercase text-center text-base">
+      <div className="lowercase text-start ml-4 text-base">
         {row.getValue("score")}
       </div>
     ),
