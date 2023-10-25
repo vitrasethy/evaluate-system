@@ -35,6 +35,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Link from "next/link";
 
 const data: Payment[] = [
   {
@@ -237,10 +238,12 @@ export default function DepartmentsForm() {
                     >
                       {row.getVisibleCells().map((cell) => (
                         <TableCell key={cell.id}>
+                          <Link href="/e-day/1">
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext()
                           )}
+                          </Link>
                         </TableCell>
                       ))}
                     </TableRow>
