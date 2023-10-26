@@ -293,7 +293,7 @@ export default function ProjectsForm() {
   return (
     <div className="flex justify-center items-center">
       <div className="present ">
-        <Card className=" rounded-none border-0">
+        <Card className=" rounded-t-none border-0">
           <CardContent className="mt-6">
             <div className="flex justify-center">
               <div className="w-full">

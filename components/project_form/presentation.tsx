@@ -210,7 +210,7 @@ export const columns: ColumnDef<Present>[] = [
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="center"
-                className="bg-gray-50 text-black cursor-pointer"
+                className="bg-gray-50 text-black"
               >
                 <DropdownMenuLabel>Member</DropdownMenuLabel>
                 <DropdownMenuItem>{row.getValue("judge1")}</DropdownMenuItem>
@@ -333,7 +333,7 @@ export default function ProjectsForm() {
   return (
     <div className="flex justify-center w-full items-center">
       <div className="present ">
-        <Card className=" w-full rounded-none border-0">
+        <Card className=" w-full rounded-t-none border-none">
           <CardContent className="mt-5">
             <div className="flex justify-center">
               <div className="w-full">
