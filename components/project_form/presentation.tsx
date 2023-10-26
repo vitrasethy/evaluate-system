@@ -204,7 +204,7 @@ export const columns: ColumnDef<Present>[] = [
           <div className="text-start font-medium">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <div className="h-8 w-8 p-0 text-base">
+                <div className="h-8 w-8 p-0 text-base cursor-pointer">
                   {row.getValue("judge")}
                 </div>
               </DropdownMenuTrigger>
@@ -275,7 +275,7 @@ export const columns: ColumnDef<Present>[] = [
         <div className="text-start font-medium">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <div className="h-8 w-8 p-0">
+              <div className="h-8 w-8 p-0 cursor-pointer">
                 <span className="sr-only">Open menu</span>
                 <MoreHorizontal className="h-4 w-4" />
               </div>
@@ -333,7 +333,7 @@ export default function ProjectsForm() {
   return (
     <div className="flex justify-center w-full items-center">
       <div className="present ">
-        <Card className=" w-full">
+        <Card className=" w-full rounded-t-none border-none">
           <CardContent className="mt-5">
             <div className="flex justify-center">
               <div className="w-full">
@@ -361,7 +361,7 @@ export default function ProjectsForm() {
                   </DropdownMenu>
                 </div>
                 <div className="md:mt-[-20px] mt-[-35px]">
-                  <Table className="border-0 ">
+                  <Table className="border-2 ">
                     <TableHeader className="md:bg-gray-300">
                       {table.getHeaderGroups().map((headerGroup) => (
                         <TableRow className="" key={headerGroup.id}>
